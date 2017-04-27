@@ -112,14 +112,544 @@
             
             <category> 日志 </category>
             
-            <category> 二级目录 </category>
-            
         </categories>
         
         
         <tags>
             
             <tag> 前端 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[apply和call]]></title>
+      <url>/2017/04/26/JS%20apply%E5%92%8Ccall/</url>
+      <content type="html"><![CDATA[<p>####1.        apply和call的区别在哪里</p>
+<p>####2.        什么情况下用apply,什么情况下用call</p>
+<p>####3.        apply的其他巧妙用法（一般在什么情况下可以使用apply）</p>
+<blockquote>
+<p><strong>apply:方法能劫持另外一个对象的方法，继承另外一个对象的属性.</strong> Function.apply(obj,args)方法能接收两个参数 obj：这个对象将代替Function类里this对象<br>args：这个是数组，它将作为参数传给Function（args–&gt;arguments）</p>
+<p><strong>call:和apply的意思一样,只不过是参数列表不一样.</strong> Function.call(obj,[param1[,param2[,…[,paramN]]]])<br>obj：这个对象将代替Function类里this对象<br>params：这个是一个参数列表</p>
+</blockquote>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;  
+    /*定义一个人类*/  
+    function Person(name,age)  
+    {  
+        this.name=name;  
+        this.age=age;  
+    }  
+    /*定义一个学生类*/  
+    functionStudent(name,age,grade)  
+    {  
+        Person.apply(this,arguments);  
+        this.grade=grade;  
+    }  
+    //创建一个学生类  
+    var student=new Student(&quot;zhangsan&quot;,21,&quot;一年级&quot;);  
+    //测试  
+    alert(&quot;name:&quot;+student.name+&quot;\n&quot;+&quot;age:&quot;+student.age+&quot;\n&quot;+&quot;grade:&quot;+student.grade);  
+    //大家可以看到测试结果name:zhangsan age:21  grade:一年级  
+    //学生类里面我没有给name和age属性赋值啊,为什么又存在这两个属性的值呢,这个就是apply的神奇之处.  
+&lt;/script&gt;
+</code></pre><blockquote>
+<p>分析: Person.apply(this,arguments); this:在创建对象在这个时候代表的是student<br>arguments:是一个数组,也就是[“zhangsan”,”21”,”一年级”];<br>                   也就是通俗一点讲就是:用student去执行Person这个类里面的内容,在Person这个类里面存在this.name等之类的语句,这样就将属性创建到了student对象里面</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> js </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[CSS实现垂直居中水平居中的绝对定位居中技术]]></title>
+      <url>/2017/04/26/CSS%E5%AE%9E%E7%8E%B0%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E7%9A%84%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D%E5%B1%85%E4%B8%AD%E6%8A%80%E6%9C%AF/</url>
+      <content type="html"><![CDATA[<p>###1、绝对定位居中（子元素需设置宽高）<br>内容块的父容器：position:relative;<br>子元素：position: absolute;top: 0;left: 0;bottom: 0;right: 0;margin:auto; （必须设置高度）</p>
+<blockquote>
+<p>原理：元素在过度受限情况下，将margin设置为auto，浏览器会重算margin的值，过度受限指的是同时设置top/bottom与height或者left/right与width。</p>
+</blockquote>
+<p>###2、绝对定位配合margin（子元素需设置宽高）</p>
+<blockquote>
+<p>原理：top：50%元素上边界位于包含框中点，设置负外边界使得元素垂直中心与包含框中心重合；</p>
+</blockquote>
+<p>第一种</p>
+<pre><code>&lt;style&gt;
+       .one{
+           border: 1px solid red;
+           width: 200px;height: 200px;
+           position: relative;
+       }
+       .two{
+           background: red;
+           width: 100px;height: 100px
+           position: absolute;left: 50%;top:50%;
+           margin: -50px 0 0 -50px;          
+          （margin设置百分比是相当于自身的高度与宽度）
+       }
+   &lt;/style&gt;
+   &lt;div class=&quot;one&quot;&gt;
+       &lt;div class=&quot;two&quot;&gt;&lt;/div&gt;
+   &lt;/div&gt;
+</code></pre><p>第二种</p>
+<pre><code>&lt;style&gt;
+    .one{
+        border: 1px solid red;
+        width: 300px;height: 300px;
+        position: relative;
+    }
+    .two{
+        position:absolute;
+        top:50%;
+        left:0;
+        right:0;
+        margin:auto;
+        margin-top:-100px; 
+        （margin设置百分比是相当于自身的高度与宽度）
+        width:200px;
+        height:200px;
+        background: red;
+    }
+&lt;/style&gt;
+&lt;body&gt;
+&lt;div class=&quot;one&quot;&gt;
+    &lt;div class=&quot;two&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>###3、table-cell方式（子元素不需设置宽高）<br>父容器：display:table-cell;text-align:center;vertical-align:middle;（设置宽高）<br>子元素：display:inline-block;vertical-align:middle;</p>
+<blockquote>
+<p>原理：利用表格布局的特点，vertical-align设置为middle;单元格中的内容与所在行中间对齐</p>
+</blockquote>
+<pre><code>&lt;style&gt;
+    .one{
+        border: 1px solid red;
+        width: 200px;height: 200px;
+        display:table-cell;vertical-align:middle;text-align: center;
+    }
+    .two{
+        background: red;
+        (1)display:inline-block;(用此方法向上偏差2px)
+        (2)margin:auto（垂直水平居中）
+    }
+&lt;/style&gt;
+&lt;div class=&quot;one&quot;&gt;
+    &lt;div class=&quot;two&quot;&gt;11111111111&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>###4、通过添加空span标签使图片居中（子元素需设置宽高）<br>父容器：text-align: center;</p>
+<blockquote>
+<p><code>&lt;span&gt;</code><br>display: inline-block;   将行内元素改变为行内块元素显示<br>width: 1px;              实现ＩＥ下可读效果<br>height: 100%;            使用元素高度和图片容器高度一样<br>vertical-align: middle;  垂直对齐<br>图片：vertical-align: middle;   </p>
+</blockquote>
+<pre><code>&lt;style&gt;
+    .one{
+        border: 1px solid red;
+        width: 200px;height: 200px;
+        text-align: center;
+    }
+    span{
+        display: inline-block;
+        width: 1px;
+        height: 100%;
+        vertical-align: middle;
+    }
+&lt;/style&gt;
+&lt;div class=&quot;one&quot;&gt;
+    &lt;span&gt;&lt;/span&gt;
+    &lt;img src=&quot;../img/jian.png&quot; alt=&quot;&quot;&gt;
+&lt;/div&gt;
+</code></pre><p>###5、外边距margin取负数，大小为width/height（不使用box-sizing: border-box时包括padding，）的一半，再加上top: 50%; left: 50%;。<br>（子元素需设置宽高）<br>    <style><br>        .one{<br>            border: 1px solid red;<br>            width: 200px;height: 200px;<br>            position: relative;<br>        }<br>        .two{<br>            background: red;<br>            width: 30px;<br>            height: 20px;<br>            padding: 20px;<br>            position: absolute;<br>            top: 50%; left: 50%;<br>            margin-left: -35px; /<em> (width + padding)/2 </em>/<br>            margin-top: -30px; /<em> (height + padding)/2 </em>/<br>        }<br>    </style><br>    <div class="one"><br>        <span></span><br>        <div class="two"></div><br>    </div> </p>
+<p>###6、内容定义transform:translate(-50%,-50%),并且加上top：50%；left：50%。（子元素需设置宽高）</p>
+<pre><code>&lt;style&gt;
+    .one{
+        border: 1px solid red;
+        width: 200px;height: 200px;
+        position: relative;
+    }
+    .two{
+        background: red;
+        width: 50%;
+        height: 30%;
+        margin: auto;
+        position: absolute;
+        top: 50%; left: 50%;
+        -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
+&lt;/style&gt;
+&lt;div class=&quot;one&quot;&gt;
+    &lt;span&gt;&lt;/span&gt;
+    &lt;div class=&quot;two&quot;&gt;&lt;/div&gt;
+&lt;/div&gt; 
+</code></pre><p>###7、增加额外子元素设置margin-bottom为内容元素的高度+padding的一半。（不能实现水平垂直居中，仅垂直居中）</p>
+<blockquote>
+<p>原理与2方法类似，floater的下边界是包含框的中心线，负下外边界保证center的中心线与包含框中心线重合</p>
+</blockquote>
+<pre><code>&lt;style&gt;
+    .one{
+        border: 1px solid red;
+        width: 200px;height: 200px;
+    }
+    .floater{
+        float: left;
+        height: 50%;
+        width: 100%;
+        margin-bottom: -10%;
+    }
+    .two{
+        clear: both;
+        height: 20%;
+        background: red;
+    }
+&lt;/style&gt;
+&lt;div class=&quot;one&quot;&gt;
+    &lt;div class=&quot;floater&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;two&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>###8、inline-block方式（子元素不需设置宽高）</p>
+<blockquote>
+<p>原理：为同一行的inline-block元素设置vertical-align：middle，该行内的inline-block元素会按照元素的垂直中心线对齐。</p>
+</blockquote>
+<pre><code>&lt;style&gt;
+    .one{
+        border: 1px solid red;
+        width: 300px;height: 300px;
+        text-align: center;
+    }
+    .one:after{
+        content: &apos;&apos;;
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+    }
+    .two{
+        background: red;
+        display:inline-block;
+        vertical-align:middle;
+    }
+&lt;/style&gt;
+&lt;div class=&quot;one&quot;&gt;
+    &lt;div class=&quot;two&quot;&gt;11111111111111111111&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>###9、弹性盒式布局（子元素不需设置宽高）<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes#.E5.BC.B9.E6.80.A7.E7.9B.92.E6.A6.82.E5.BF.B5" target="_blank" rel="external">CSS弹性盒</a></p>
+<pre><code>&lt;style&gt;
+   (1) .one{
+           border: 1px solid red;
+           width: 300px;height: 300px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+       }
+       .two{
+           background: red;
+       }
+   (2) .one{
+           border: 1px solid red;
+           width: 300px;height: 300px;
+           display: flex;
+       }
+       .two{
+           background: red;
+           margin:auto;
+       }
+   &lt;/style&gt;
+   &lt;div class=&quot;one&quot;&gt;
+       &lt;div class=&quot;two&quot;&gt;111111111111&lt;/div&gt;
+   &lt;/div&gt;
+</code></pre>]]></content>
+      
+        <categories>
+            
+            <category> html css </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> html css </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[JS小技巧]]></title>
+      <url>/2017/04/26/JS%E5%B0%8F%E6%8A%80%E5%B7%A7/</url>
+      <content type="html"><![CDATA[<p>##一、金钱格式转换<br>  1.英文钱格式转换<br>    $(“#id”).text().replace(/,/g,””);<br>  2.中文钱格式转换</p>
+<pre><code>function formatCash(cash){
+    var str_cash = cash + &quot;&quot;;//转换成字符串
+    var ret_cash = &quot;&quot;;
+    var counter = 0;
+    for(var i=str_cash.length-1;i&gt;=0;i--){
+        ret_cash = str_cash.charAt(i) + ret_cash; //charAt返回指定位置的字符
+        counter++;
+        if(counter==3){
+            counter = 0;
+            if(i!=0){
+            ret_cash = &quot;,&quot; + ret_cash;
+            }
+        }}
+    return ret_cash;
+}
+</code></pre><p>##二、判断数据类型<br>  toString.call（）</p>
+<pre><code>function  objType(obj) {
+    return toString.call(obj).replace(&quot;[&quot;,&quot;&quot;).replace(&quot;]&quot;,&quot;&quot;).split(&quot; &quot;)[1];
+}
+</code></pre><p>##三、判断数组是否存在某个值</p>
+<pre><code>Array.prototype.inArray = function(e) { 
+    for(i=0;i &lt; this.length;i++)
+    {
+        if(this[i] == e)
+        return true;
+    }
+    return false;
+}
+[1,2].inArray(1);  //true
+</code></pre><p>##四、字符数统计</p>
+<pre><code>function fucCheckLength(strTemp){
+    var i,sum;
+    sum=0;
+    for(i=0;i&lt;strTemp.length;i++){
+        if ((strTemp.charCodeAt(i)&gt;=0) &amp;&amp; (strTemp.charCodeAt(i)&lt;=255)){
+            sum=sum+1;
+        }else{
+            sum=sum+2;
+        }
+    }
+    return sum;
+}
+</code></pre><p>##五、三元表达式</p>
+<pre><code>alert( a? &apos;true&apos; : false ? &apos;t&apos; : &apos;f&apos; ) == alert( a? &apos;true&apos; : ( false ? &apos;t&apos; : &apos;f&apos; ) )   
+在js 中 语句是从右到左，所以如果a=false的时候结果：f
+用法：
+$(&apos;.item&apos;)[ flag ? &apos;addClass&apos; : &apos;removeClass&apos;](&apos;hover&apos;)；
+
+flag = true 的时候：
+$(&apos;.item&apos;)[&apos;addClass&apos;](&apos;hover&apos;)==$(&apos;.item&apos;).addClass(&apos;hover&apos;)
+</code></pre><p>##六、 获取对象的属性个数<br>    var a{1:1,2:2,3:3,4:4}<br>    Object.getOwnPropertyNames(a).length //4</p>
+<p>##七、数组和对象字面量<br>    用数组和对象字面量来代替数组和对象构造器。数组构造器很容易让人在它的参数上犯错。<br>    var a1 = new Array(x1, x2, x3); //数组长度3<br>    var a2 = new Array(x1, x2);     //数组长度2</p>
+<pre><code>var a3 = new Array(x1);                                             //如果x1是一个自然数，那么它的长度将为x1
+//如果x1不是一个自然数，那么它的长度将为1
+</code></pre><p>##八、for循环<br>    使用for循环过程中，数组的长度，使用一个变量来接收，这样有利于代码执行效率得到提高，而不是每走一次循环，都得重新计算数组长度<br>    for(var i=0;i&lt;arr.length,i++){}<br>    优化：for(var i=0,len=arr.length;i&lt;len,i++){}</p>
+<p>##九、重复的dom操作<br>    重复的dom操作，使用一个变量来进行接收很有必要，而不是频繁的去操作dom树，这对性能与代码的整洁及易维护性带来不好的影响<br>    在jquery .end()可使用的情况下应该优先使用.end()</p>
+<p>##<strong>插件的一些技巧</strong></p>
+<p>##一、Avalon<br>    一般情况下，我们在使用ms-controller绑定时，需要添加一个ms-controller类名，设置为visibility：hidden;目的是为了防止网速慢时将花括号暴露出来。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> js </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[table元素]]></title>
+      <url>/2017/04/26/thead/</url>
+      <content type="html"><![CDATA[<p>###1、<code>&lt;thead&gt;</code><br>整个第一行的部分没有包含数据，它只是每个列的标题。因此，我们可以<code>&lt;thead</code>&gt;元素来完成这件事情，它会包裹第一个<code>&lt;tr&gt;</code>元素(它会包裹所有的行所需要的头部信息)；<br>当你使用了<code>&lt;thead&gt;</code>元素后，<code>&lt;table&gt;</code>元素中不能有直接的<code>&lt;tr&gt;</code>子元素，所有的行必须存在于<code>&lt;thead&gt;</code>，<code>&lt;tbody&gt;</code>和<code>&lt;tfoot&gt;</code>里面。要注意的是我们会把所有的数据行包含在<code>&lt;tbody&gt;</code>里面。</p>
+<p>###2、<code>&lt;tfoot&gt;</code><br><code>&lt;tfoot&gt;</code>独一无二的一点是它在HTML中的位置，它紧跟着<code>&lt;thead&gt;</code>并位于<code>&lt;tbody&gt;</code>的前面！你可能会认为它是table标签结束前的最后一个元素，但情况并不是这样。因为页脚可能包含了用于理解表格的必要信息，因为在资源序列中它应当排在在数据的前面。 在一些元素位置根据需要从上至下跳动的布局中，<code>&lt;tfoot&gt;</code>是个不错的技巧。举个例子，虽然一个导航在屏幕的底部，但在HTML源码中导航应该在顶部。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;table&gt;   </div><div class="line">    &lt;thead&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;th&gt;Name&lt;/th&gt;</div><div class="line">            &lt;th&gt;ID&lt;/th&gt;</div><div class="line">            &lt;th&gt;Favorite Color&lt;/th&gt;</div><div class="line">        &lt;/tr&gt;   </div><div class="line">    &lt;/thead&gt;   </div><div class="line">    &lt;tfoot&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;th&gt;tfoot&lt;/th&gt;</div><div class="line">            &lt;th&gt;ID&lt;/th&gt;</div><div class="line">            &lt;th&gt;Favorite Color&lt;/th&gt;</div><div class="line">        &lt;/tr&gt;  </div><div class="line">    &lt;/tfoot&gt;   </div><div class="line">    &lt;tbody&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;td&gt;Jim&lt;/td&gt;</div><div class="line">            &lt;td&gt;00001&lt;/td&gt;</div><div class="line">            &lt;td&gt;Blue&lt;/td&gt;</div><div class="line">        &lt;/tr&gt;   </div><div class="line">    &lt;/tbody&gt; </div><div class="line">&lt;/table&gt;</div></pre></td></tr></table></figure></p>
+<table><br>  <thead><br>    <tr><br>      <th>Name</th><br>      <th>ID</th><br>      <th>Favorite Color</th><br>    </tr><br>  </thead><br>  <tfoot><br>    <tr><br>      <th>tfoot</th><br>      <th>ID</th><br>      <th>Favorite Color</th><br>    </tr><br>  </tfoot><br>  <tbody><br>    <tr><br>      <td>Jim</td><br>      <td>00001</td><br>      <td>Blue</td><br>    </tr><br>  </tbody><br></table>
+
+<p>###3、单元格：<code>td</code>和<code>th</code><br>在表格中一个独立的单元格总是<code>&lt;td&gt;</code>或<code>&lt;th&gt;</code>两者之一，只要你愿意，你可以把任何东西放进表格的单元格中，但要使这些元素成为表格中的单元格元素。<code>&lt;th&gt;</code>是“表格的标题”一般用在一列的第一格,里面的内容会自动加粗加黑他们，<code>&lt;td&gt;</code>是“表格的数据”。</p>
+<p>###4、基本样式<br>你看到的大多数表格都用颜色和线条来区别表格的不同部分。边框是非常常见的。默认的，所有的单元格相互之间都有2px的空隙<br>bordercolor =”边框颜色”<br>cellspacing =”单元格之间的距离，外边距”<br>cellpadding =”单元格与内容之间的距离，内边距”<br>bgcolor =”背景颜色”<br>align =”水平对齐方式”<br>valign =”垂直对齐方式”</p>
+<blockquote>
+<p>1、border-collapse：<br>用于表格属性, 表示表格的两边框合并为一条。 </p>
+<p>默认值：<strong>separate</strong>边框会被分开。不会忽略border-spacing 和 empty-cells 属性。<br><strong>collapse</strong>：如果可能，边框会合并为一个单一的边框。会忽略border-spacing 和 empty-cells 属性。<br><strong>inherit</strong>：规定应该从父元素继承border-collapse属性的值。</p>
+<p>2、 border-spacing:<br>属性设置相邻单元格的边框间的距离（仅用于“边框分离”模式）。</p>
+<p><strong>length length</strong>: 规定相邻单元的边框之间的距离。使用 px、cm 等单位。不允许使用负值。 如果定义一个 length 参数，那么定义的是水平和垂直间距。 如果定义两个 length参数，那么第一个设置水平间距，而第二个设置垂直间距。<br><strong>inherit</strong>:规定应该从父元素继承 border-spacing 属性的值。</p>
+</blockquote>
+<p>table表格td设置宽度后文字太多导致自动换行：<br>1.设置表格table的样式为：style=”table-layout:fixed;”<br>2.然后设置td的样式为：style=”word-wrap:break-word;”</p>
+<p>###5、合并单元格<br>有两个能应用在任何单元格中的重要的属性（<code>&lt;td&gt;</code>或<code>&lt;th&gt;</code>）：colspan 和 rowspan 。他们接受任何大于等于2的正整数。如果一个 td 元素的 colspan 值为2（<code>&lt;td colspan=&quot;2&quot;&gt;</code>），它将仍然是单独的单元格，但它<br>会在一行中水平的占据两个单元格的空间。rowspan也一样，但它作用于垂直方向。</p>
+<p>###6、使语义元素表现地像一个表格<br>display: table                /<em> <code>&lt;table&gt;</code>     </em>/<br>display: table-cell           /<em> <code>&lt;td&gt;</code>        </em>/<br>display: table-row            /<em> <code>&lt;tr&gt;</code>        </em>/<br>display: table-column         /<em> <code>&lt;col&gt;</code>       </em>/<br>display: table-column-group   /<em> <code>&lt;colgroup&gt;</code>  </em>/<br>display: table-footer-group   /<em> <code>&lt;tfoot&gt;</code>     </em>/<br>display: table-header-group   /<em> <code>&lt;thead&gt;</code>     </em>/</p>
+<p>注意这里没有<th>的值，这是因为语义的关系，</th><th>和</th><td>的表现实际上是相同的，所以没必要多增加这样一个值。</td></p>
+<p>display: inline-table<br>表格是自适应宽度的。它就像 inline-block 元素一样。顾名思义，这个值使得它们成为一个 inline-block 元素而不会产生换行。</p>
+<p>###7、colgroup与col<br>colgroup、col 标签用来定义表格列的分组。<br>通过使用 <code>&lt;colgroup&gt;</code>标签，可以向整个列应用样式，而不需要重复为每个单元格或每一行设置样式。<br>如果想对 <code>&lt;colgroup&gt;</code> 中的某列定义不同的属性，请在 <code>&lt;colgroup&gt;</code> 标签内使用 <code>&lt;col&gt;</code> 标签。<br>col标签为表格中一个或多个列定义属性值。<br>colgroup标签用于对表格中的列进行组合，以便对其进行格式化。 </p>
+<p>###8、“隐含”元素和未关闭的标签</p>
+<ul>
+<li><code>&lt;col&gt;</code>标签是属于那种无内容的不需要闭合的标签，类似<code>&lt;br&gt;/&lt;br /&gt;</code>；</li>
+<li><code>&lt;td&gt;</code>元素在这些情况中是无需闭合的：“如果<td>元素后面没有更多的<code>&lt;td&gt;或&lt;th&gt;</code>元素或者在它父元素中没有更多的内容，闭合标签是可以省略的。”；</td></li>
+<li>缺少的<code>&lt;/tr&gt;</code>标签的原理也是相同的：“如果<tr>元素后面没有紧跟着一个</tr><tr>元素或者如果它父元素组(<thead>,<br><tbody>或者 <tfoot>)没有更多的内容，结束标签是可以省略的。”；</tfoot></tbody></thead></tr></li>
+</ul>
+<p>###9、高亮鼠标所在的行/列/单元格<br>    td:hover {<br>      background: yellow;<br>    }<br>    tr:hover {<br>      background: yellow;<br>    }</p>
+<pre><code>鼠标移动动一个单元格的时候他所在的列与行全部选中
+var allCells = $(&quot;td, th&quot;);
+allCells.on(&quot;mouseover&quot;, function() {
+    var el = $(this),
+        pos = el.index();
+    el.parent().find(&quot;th, td&quot;).addClass(&quot;hover&quot;);
+    allCells.filter(&quot;:nth-child(&quot; + (pos+1) + &quot;)&quot;).addClass(&quot;hover&quot;);
+  })
+  .on(&quot;mouseout&quot;, function() {
+    allCells.removeClass(&quot;hover&quot;);
+  });
+
+ 表格自身设置圆角时需要设置border-collapse: separate;
+</code></pre>]]></content>
+      
+        <categories>
+            
+            <category> html </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> html </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[JavaScript事件初识]]></title>
+      <url>/2017/04/26/JavaScript%E4%BA%8B%E4%BB%B6%E5%88%9D%E8%AF%86/</url>
+      <content type="html"><![CDATA[<hr>
+<blockquote>
+<p><strong>需要了解事件的什么？</strong><br>对于事件来讲，首先，我们需要了解这样几个概念：事件；事件处理程序；事件类型；事件流；事件冒泡；事件捕获；事件对象；事件方面的性能优化（事件委托、移除事件处理程序）；常见的浏览器兼容问题。</p>
+<p><strong>事件的概念</strong><br>事件：指的是文档或者浏览器窗口中发生的一些特定交互瞬间。我们可以通过侦听器（或者处理程序）来预定事件，以便事件发生的时候执行相应的代码。</p>
+</blockquote>
+<p>###JavaScript鼠标事件</p>
+<blockquote>
+<p><code>onclick</code> 鼠标单击事件<br><code>ondblclick</code> 鼠标双击事件<br><code>onmousedown</code> 鼠标按下事件<br><code>onmouseup</code> 鼠标抬起事件<br><code>onmousemove</code> 鼠标移动事件<br><code>onmouseover</code> 鼠标移入事件<br><code>onmouseout</code> 鼠标移出事件</p>
+</blockquote>
+<p>###JavaScript键盘事件</p>
+<blockquote>
+<p><code>onkeyup</code> 鼠标弹起事件<br><code>onkeydown</code> 鼠标按下事件<br><code>onkeypress</code> 鼠标按下或按住</p>
+</blockquote>
+<p>###JavaScript表单事件</p>
+<blockquote>
+<p><code>onsubmit</code> 提交表单<br><code>onfocus</code> ：获取焦点事件、获取焦点的时候触发<br><code>onblur</code>： 失去焦点事件、失去焦点的时候触发<br><code>onchange</code> 改变input</p>
+</blockquote>
+<p>obj.focus() 给指定元素设置焦点<br>obj.blur() 取消指定元素的的焦点<br>obj.select()  这个方法是选中指定元素里面的文本内容<br>当 textarea 或文本类型的 input 元素中的文本被选择时，会发生 select 事件。</p>
+<p>###JavaScript页面事件<br><code>onload</code> 页面加载</p>
+<p>###补充事件:<br><code>onscroll</code> 滚轮<br><code>onresize</code> 监控浏览器尺寸变化</p>
+<p>###事件对象</p>
+<blockquote>
+<p><em>一、什么是事件对象</em><br>用来记录一些事件发生时的相关的信息的对象<br>1.只有当事件发生的时候才产生，只能在处理函数内部访问<br>2.处理函数运行结束后自动销毁。</p>
+<p>当一个事件被触发时，会创建一个事件对象(Event Object),<br>这个对象里面包含了与该事件相关的属性或者方法。该对象会作为第一个参数传递给监听函数。</p>
+</blockquote>
+<p>###事件对象的属性</p>
+<blockquote>
+<p><strong><em>相对于浏览器位置的</em></strong><br>clientX 当鼠标事件发生的时候，鼠标相对于浏览器X轴的位置<br>clientY 当鼠标事件发生的时候，鼠标相对于浏览器Y轴的位置<br><strong><em>相对于屏幕位置的</em></strong><br>screenX 当鼠标事件发生的时候，鼠标相对于屏幕X轴的位置<br>screenY 当鼠标事件发生的时候，鼠标相对于屏幕Y轴的位置<br><strong><em>相对于事件源的位置</em></strong><br>offsetX 当鼠标事件发生的时候，鼠标相对于事件源X轴的位置<br>offsetY 当鼠标事件发生的时候，鼠标相对于事件源Y轴的位置</p>
+</blockquote>
+<p>###事件流</p>
+<blockquote>
+<p>事件是与浏览器或文档交互的瞬间，如点击按钮，填写表格等，它是JS与HTML之间交互的桥梁。DOM是树形结构，如果同时给父子节点都绑定事件时，当触发子节点的时候，这两个事件的发生顺序如何决定?这就涉及到事件流的概念，它描述的是页面中接受事件的顺序。</p>
+<p>当页面元素触发事件的时候，该元素的容器以及整个页面都 会按照特定顺序响应该元素的触发事件，事件传播的顺序叫 做事件流程。</p>
+</blockquote>
+<p>####事件流的分类<br><strong>1</strong>.冒泡型事件(所有的浏览器都支持)<br>由明确的事件源到最不确定的事件源依次向上触发。<br><strong>冒泡的案例:</strong></p>
+<pre><code>&lt;div id=&quot;s1&quot;&gt;s1
+     &lt;div id=&quot;s2&quot;&gt;s2&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;script&gt;
+     s1.addEventListener(&quot;click&quot;,function(e){
+       alert(&quot;s1 冒泡事件&quot;);
+     },false);
+     s2.addEventListener(&quot;click&quot;,function(e){
+       alert(&quot;s2 冒泡事件&quot;);
+     },false);
+   &lt;/script&gt;
+</code></pre><p>当我们点击s2的时候，执行结果如下：<br>//s2 冒泡事件<br>//s1 冒泡事件<br><a href="http://runjs.cn/detail/kj4jgpli" target="_blank" rel="external">点击预览</a></p>
+<p><strong>2</strong>.捕获型事件(IE不支持 w3c标准 火狐)<br>不确定的事件源到明确的事件源一次向下触发。<br><strong>捕获的案例</strong></p>
+<pre><code>&lt;div id=&quot;s1&quot;&gt;s1
+  &lt;div id=&quot;s2&quot;&gt;s2&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+  s1.addEventListener(&quot;click&quot;,function(e){
+    alert(&quot;s1 捕获事件&quot;);
+  },true);
+  s2.addEventListener(&quot;click&quot;,function(e){
+    alert(&quot;s2 捕获事件&quot;);
+  },true);
+&lt;/script&gt;
+</code></pre><p>当我们点击s2的时候，执行结果如下：<br>//s1 捕获事件<br>//s2 捕获事件<br><a href="http://runjs.cn/detail/c3mjulm0" target="_blank" rel="external">点击预览</a></p>
+<blockquote>
+<p>首先在 IE 下的方法：<br>obj.attachEvent(事件名称,事件函数)<br>1、 在非标准IE下是没有事件捕获的，也就是说这个方法绑定函数，不存在事件捕获<br>2、 事件名称是带on的<br>3、 事件执行的顺序  标准IE下正序，在非标准IE下反序<br>相对应的取消事件：<br>obj.dettachEvent(事件名称,事件函数)</p>
+<p>标准浏览器下 ：<br>obj.addEventListener(事件名称,事件函数,是否捕获)；<br>（ 第三个参数默认是false ：代表冒泡 true:代表捕获 ）<br>事件绑定取消 ： obj.removeEventListener(事件名称,事件函数,是否捕获), 传入的参数和绑定事件传入的参数要保持一致</p>
+<p>事件的默认事件 （浏览器自带的行为，比如我们在浏览器中点击右键会弹出菜单，这就是默认行为）<br>以下是我最近用到的一个，（多级连续点击会出现一个选中的状态）以下方法可以取消掉 obj.on(“selectstart”,<br>function() {return false;});</p>
+</blockquote>
+<p><strong><em>事件捕获vs事件冒泡</em></strong><br>当事件捕获和事件冒泡一起存在的情况，事件又是如何触发呢。</p>
+<p>这里记被点击的DOM节点为target节点<br>1、对于非target节点则先执行捕获在执行冒泡<br>2、对于target节点则是先执行先注册的事件，无论冒泡还是捕获</p>
+<pre><code>&lt;div id=&quot;s1&quot;&gt;s1
+  &lt;div id=&quot;s2&quot;&gt;s2&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+s1.addEventListener(&quot;click&quot;,function(e){
+  alert(&quot;s1 冒泡事件&quot;);         
+},false);
+s2.addEventListener(&quot;click&quot;,function(e){
+  alert(&quot;s2 冒泡事件&quot;);
+},false);
+
+s1.addEventListener(&quot;click&quot;,function(e){
+  alert(&quot;s1 捕获事件&quot;);
+},true);
+
+s2.addEventListener(&quot;click&quot;,function(e){
+  alert(&quot;s2 捕获事件&quot;);
+},true);
+&lt;/script&gt;
+</code></pre><p>当我们点击s2的时候,执行结果如下：<br>//s1 捕获事件<br>//s2 冒泡事件<br>//s2 捕获事件<br>//s1 冒泡事件<br><a href="http://runjs.cn/detail/fkq3uyqh" target="_blank" rel="external">点击预览</a></p>
+<blockquote>
+<p>这里大体分析下执行结果<br>点击 s2 ， click 事件从 document-&gt;html-&gt;body-&gt;s1-&gt;s2 (捕获前进)<br>这里在s1上发现了捕获注册事件，则输出”s1 捕获事件”<br>到达s2，已经到达目的节点，<br>s2上注册了冒泡和捕获事件，先注册的冒泡后注册的捕获，则先执行冒泡，输出”s2 冒泡事件”<br>再在s2上执行后注册的事件，即捕获事件，输出”s2 捕获事件”<br>下面进入冒泡阶段，按照 s2-&gt;s1-&gt;body-&gt;html-&gt;documen (冒泡前进)<br>在s1上发现了冒泡事件，则输出”s1 冒泡事件”</p>
+</blockquote>
+<p>阻止事件流(事件对象)<br>IE: 事件对象.cancelBubble=true;<br>FF: 事件对象.stopPropagation();<br>获得目标事件源的对象<br>IE： 事件对象.srcElement<br>FF: 事件对象.target<br>事件对象阻止浏览器默认行为<br>if (ev.preventDefault )<br>ev.preventDefault(); //阻止默认浏览器动作(W3C)<br>else<br>ev.returnValue = false;//IE中阻止函数器默认动作的方<br>式</p>
+<blockquote>
+<p>我们一般用到的都是冒泡捕获型事件 在实际的开发当中，利用事件流的特性，我们可以使用一种叫做事件代理的方法。</p>
+</blockquote>
+<p>举个栗子？<br>假设有一个 UL 的父节点，包含了很多个 Li 的子节点：</p>
+<pre><code>&lt;ul id=&quot;parent-list&quot;&gt;
+  &lt;li id=&quot;post-1&quot;&gt;Item 1&lt;/li&gt;
+  &lt;li id=&quot;post-2&quot;&gt;Item 2&lt;/li&gt;
+  &lt;li id=&quot;post-3&quot;&gt;Item 3&lt;/li&gt;
+  &lt;li id=&quot;post-4&quot;&gt;Item 4&lt;/li&gt;
+  &lt;li id=&quot;post-5&quot;&gt;Item 5&lt;/li&gt;
+  &lt;li id=&quot;post-6&quot;&gt;Item 6&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p>我们通常的做法是对每一个元素进行循环操作添加监听事件：</p>
+<pre><code>var oUl=document.getElementById(&quot;parent-list&quot;);
+var aLi=oUl.getElementsByTagName(&apos;li&apos;);
+for (var i = 0; i &lt; aLi.length; i++) {
+    aLi[i].onclick=function () {
+        ......
+    }
+}
+</code></pre><p>如果这个UL中的Li子元素会频繁地添加或者删除，我们就需要在每次添加Li添加事件处理函数，这就增加了复杂度和出错的可能性。</p>
+<p>更简单的方法是使用事件代理机制，当事件被抛到更上层的父节点的时候，我们通过检查事件的目标对象（target）来判断并获取事件源Li。<br><strong><em>优点：</em></strong><br>1、相比之前遍历每一个li在绑定一个事件感觉爽了很多；<br>2、很明显没有了for 性能肯定是有提升；<br>3、动态的添加新的元素还是会有之前的事件（因为不管怎么样还是要冒泡到父元素的嘛）；</p>
+<blockquote>
+<p>为父节点添加一个click事件，当子节点被点击的时候，click事件会从子节点开始向上冒泡。父节点捕获到事件之后，通过判断e.target.nodeName来判断是否为我们需要处理的节点。并且通过e.target拿到了被点击的Li节点。从而可以获取到相应的信息，并作处理。</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> js </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> js </tag>
             
         </tags>
         

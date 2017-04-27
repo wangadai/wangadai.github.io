@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="js," />
 
 
 
@@ -87,15 +87,17 @@
 
 
 
-<meta name="description" content="记录生活点滴">
-<meta property="og:type" content="website">
-<meta property="og:title" content="阿呆的博客">
-<meta property="og:url" content="http://wangadai.github.io/archives/2017/index.html">
+<meta name="description" content="####1.        apply和call的区别在哪里 ####2.        什么情况下用apply,什么情况下用call ####3.        apply的其他巧妙用法（一般在什么情况下可以使用apply）  apply:方法能劫持另外一个对象的方法，继承另外一个对象的属性. Function.apply(obj,args)方法能接收两个参数 obj：这个对象将代替Functi">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="apply和call">
+<meta property="og:url" content="http://wangadai.github.io/2017/04/26/JS apply和call/index.html">
 <meta property="og:site_name" content="阿呆的博客">
-<meta property="og:description" content="记录生活点滴">
+<meta property="og:description" content="####1.        apply和call的区别在哪里 ####2.        什么情况下用apply,什么情况下用call ####3.        apply的其他巧妙用法（一般在什么情况下可以使用apply）  apply:方法能劫持另外一个对象的方法，继承另外一个对象的属性. Function.apply(obj,args)方法能接收两个参数 obj：这个对象将代替Functi">
+<meta property="og:updated_time" content="2017-04-27T10:13:25.707Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿呆的博客">
-<meta name="twitter:description" content="记录生活点滴">
+<meta name="twitter:title" content="apply和call">
+<meta name="twitter:description" content="####1.        apply和call的区别在哪里 ####2.        什么情况下用apply,什么情况下用call ####3.        apply的其他巧妙用法（一般在什么情况下可以使用apply）  apply:方法能劫持另外一个对象的方法，继承另外一个对象的属性. Function.apply(obj,args)方法能接收两个参数 obj：这个对象将代替Functi">
 
 
 
@@ -123,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://wangadai.github.io/archives/2017/"/>
+  <link rel="canonical" href="http://wangadai.github.io/2017/04/26/JS apply和call/"/>
 
 
 
 
 
-  <title> 归档 | 阿呆的博客 </title>
+  <title> apply和call | 阿呆的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -164,7 +166,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -302,251 +304,234 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 6 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/26/hello-world/" itemprop="url">
-              
-                <span itemprop="name">从前端菜鸟到大神，一篇总结得很好的文章</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-26T16:51:23+08:00"
-              content="2017-04-26" >
-          04-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/26/JS apply和call/" itemprop="url">
-              
-                <span itemprop="name">apply和call</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-26T16:51:23+08:00"
-              content="2017-04-26" >
-          04-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/26/CSS实现垂直居中水平居中的绝对定位居中技术/" itemprop="url">
-              
-                <span itemprop="name">CSS实现垂直居中水平居中的绝对定位居中技术</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-26T16:51:23+08:00"
-              content="2017-04-26" >
-          04-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/26/JS小技巧/" itemprop="url">
-              
-                <span itemprop="name">JS小技巧</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-26T16:51:23+08:00"
-              content="2017-04-26" >
-          04-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/26/thead/" itemprop="url">
-              
-                <span itemprop="name">table元素</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-26T16:51:23+08:00"
-              content="2017-04-26" >
-          04-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/26/JavaScript事件初识/" itemprop="url">
-              
-                <span itemprop="name">JavaScript事件初识</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-26T11:51:23+08:00"
-              content="2017-04-26" >
-          04-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://wangadai.github.io/2017/04/26/JS apply和call/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="阿呆">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/adai.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿呆的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                apply和call
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-26T16:51:23+08:00">
+                2017-04-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>####1.        apply和call的区别在哪里</p>
+<p>####2.        什么情况下用apply,什么情况下用call</p>
+<p>####3.        apply的其他巧妙用法（一般在什么情况下可以使用apply）</p>
+<blockquote>
+<p><strong>apply:方法能劫持另外一个对象的方法，继承另外一个对象的属性.</strong> Function.apply(obj,args)方法能接收两个参数 obj：这个对象将代替Function类里this对象<br>args：这个是数组，它将作为参数传给Function（args–&gt;arguments）</p>
+<p><strong>call:和apply的意思一样,只不过是参数列表不一样.</strong> Function.call(obj,[param1[,param2[,…[,paramN]]]])<br>obj：这个对象将代替Function类里this对象<br>params：这个是一个参数列表</p>
+</blockquote>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;  
+    /*定义一个人类*/  
+    function Person(name,age)  
+    {  
+        this.name=name;  
+        this.age=age;  
+    }  
+    /*定义一个学生类*/  
+    functionStudent(name,age,grade)  
+    {  
+        Person.apply(this,arguments);  
+        this.grade=grade;  
+    }  
+    //创建一个学生类  
+    var student=new Student(&quot;zhangsan&quot;,21,&quot;一年级&quot;);  
+    //测试  
+    alert(&quot;name:&quot;+student.name+&quot;\n&quot;+&quot;age:&quot;+student.age+&quot;\n&quot;+&quot;grade:&quot;+student.grade);  
+    //大家可以看到测试结果name:zhangsan age:21  grade:一年级  
+    //学生类里面我没有给name和age属性赋值啊,为什么又存在这两个属性的值呢,这个就是apply的神奇之处.  
+&lt;/script&gt;
+</code></pre><blockquote>
+<p>分析: Person.apply(this,arguments); this:在创建对象在这个时候代表的是student<br>arguments:是一个数组,也就是[“zhangsan”,”21”,”一年级”];<br>                   也就是通俗一点讲就是:用student去执行Person这个类里面的内容,在Person这个类里面存在this.name等之类的语句,这样就将属性创建到了student对象里面</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/26/CSS实现垂直居中水平居中的绝对定位居中技术/" rel="next" title="CSS实现垂直居中水平居中的绝对定位居中技术">
+                <i class="fa fa-chevron-left"></i> CSS实现垂直居中水平居中的绝对定位居中技术
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/26/hello-world/" rel="prev" title="从前端菜鸟到大神，一篇总结得很好的文章">
+                从前端菜鸟到大神，一篇总结得很好的文章 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -554,6 +539,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -808,11 +797,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
 
 
   
