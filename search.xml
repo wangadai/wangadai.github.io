@@ -124,56 +124,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[apply和call]]></title>
-      <url>/2017/04/26/JS%20apply%E5%92%8Ccall/</url>
-      <content type="html"><![CDATA[<p>####1.        apply和call的区别在哪里</p>
-<p>####2.        什么情况下用apply,什么情况下用call</p>
-<p>####3.        apply的其他巧妙用法（一般在什么情况下可以使用apply）</p>
-<blockquote>
-<p><strong>apply:方法能劫持另外一个对象的方法，继承另外一个对象的属性.</strong> Function.apply(obj,args)方法能接收两个参数 obj：这个对象将代替Function类里this对象<br>args：这个是数组，它将作为参数传给Function（args–&gt;arguments）</p>
-<p><strong>call:和apply的意思一样,只不过是参数列表不一样.</strong> Function.call(obj,[param1[,param2[,…[,paramN]]]])<br>obj：这个对象将代替Function类里this对象<br>params：这个是一个参数列表</p>
-</blockquote>
-<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;  
-    /*定义一个人类*/  
-    function Person(name,age)  
-    {  
-        this.name=name;  
-        this.age=age;  
-    }  
-    /*定义一个学生类*/  
-    functionStudent(name,age,grade)  
-    {  
-        Person.apply(this,arguments);  
-        this.grade=grade;  
-    }  
-    //创建一个学生类  
-    var student=new Student(&quot;zhangsan&quot;,21,&quot;一年级&quot;);  
-    //测试  
-    alert(&quot;name:&quot;+student.name+&quot;\n&quot;+&quot;age:&quot;+student.age+&quot;\n&quot;+&quot;grade:&quot;+student.grade);  
-    //大家可以看到测试结果name:zhangsan age:21  grade:一年级  
-    //学生类里面我没有给name和age属性赋值啊,为什么又存在这两个属性的值呢,这个就是apply的神奇之处.  
-&lt;/script&gt;
-</code></pre><blockquote>
-<p>分析: Person.apply(this,arguments); this:在创建对象在这个时候代表的是student<br>arguments:是一个数组,也就是[“zhangsan”,”21”,”一年级”];<br>                   也就是通俗一点讲就是:用student去执行Person这个类里面的内容,在Person这个类里面存在this.name等之类的语句,这样就将属性创建到了student对象里面</p>
-</blockquote>
-]]></content>
-      
-        <categories>
-            
-            <category> js </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> js </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[CSS实现垂直居中水平居中的绝对定位居中技术]]></title>
       <url>/2017/04/26/CSS%E5%AE%9E%E7%8E%B0%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E7%9A%84%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D%E5%B1%85%E4%B8%AD%E6%8A%80%E6%9C%AF/</url>
       <content type="html"><![CDATA[<p>###1、绝对定位居中（子元素需设置宽高）<br>内容块的父容器：position:relative;<br>子元素：position: absolute;top: 0;left: 0;bottom: 0;right: 0;margin:auto; （必须设置高度）</p>
@@ -383,6 +333,114 @@
     </entry>
     
     <entry>
+      <title><![CDATA[table元素]]></title>
+      <url>/2017/04/26/thead/</url>
+      <content type="html"><![CDATA[<p>###1、<code>&lt;thead&gt;</code><br>整个第一行的部分没有包含数据，它只是每个列的标题。因此，我们可以<code>&lt;thead</code>&gt;元素来完成这件事情，它会包裹第一个<code>&lt;tr&gt;</code>元素(它会包裹所有的行所需要的头部信息)；<br>当你使用了<code>&lt;thead&gt;</code>元素后，<code>&lt;table&gt;</code>元素中不能有直接的<code>&lt;tr&gt;</code>子元素，所有的行必须存在于<code>&lt;thead&gt;</code>，<code>&lt;tbody&gt;</code>和<code>&lt;tfoot&gt;</code>里面。要注意的是我们会把所有的数据行包含在<code>&lt;tbody&gt;</code>里面。</p>
+<p>###2、<code>&lt;tfoot&gt;</code><br><code>&lt;tfoot&gt;</code>独一无二的一点是它在HTML中的位置，它紧跟着<code>&lt;thead&gt;</code>并位于<code>&lt;tbody&gt;</code>的前面！你可能会认为它是table标签结束前的最后一个元素，但情况并不是这样。因为页脚可能包含了用于理解表格的必要信息，因为在资源序列中它应当排在在数据的前面。 在一些元素位置根据需要从上至下跳动的布局中，<code>&lt;tfoot&gt;</code>是个不错的技巧。举个例子，虽然一个导航在屏幕的底部，但在HTML源码中导航应该在顶部。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;table&gt;   </div><div class="line">    &lt;thead&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;th&gt;Name&lt;/th&gt;</div><div class="line">            &lt;th&gt;ID&lt;/th&gt;</div><div class="line">            &lt;th&gt;Favorite Color&lt;/th&gt;</div><div class="line">        &lt;/tr&gt;   </div><div class="line">    &lt;/thead&gt;   </div><div class="line">    &lt;tfoot&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;th&gt;tfoot&lt;/th&gt;</div><div class="line">            &lt;th&gt;ID&lt;/th&gt;</div><div class="line">            &lt;th&gt;Favorite Color&lt;/th&gt;</div><div class="line">        &lt;/tr&gt;  </div><div class="line">    &lt;/tfoot&gt;   </div><div class="line">    &lt;tbody&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;td&gt;Jim&lt;/td&gt;</div><div class="line">            &lt;td&gt;00001&lt;/td&gt;</div><div class="line">            &lt;td&gt;Blue&lt;/td&gt;</div><div class="line">        &lt;/tr&gt;   </div><div class="line">    &lt;/tbody&gt; </div><div class="line">&lt;/table&gt;</div></pre></td></tr></table></figure></p>
+<table><br>  <thead><br>    <tr><br>      <th>Name</th><br>      <th>ID</th><br>      <th>Favorite Color</th><br>    </tr><br>  </thead><br>  <tfoot><br>    <tr><br>      <th>tfoot</th><br>      <th>ID</th><br>      <th>Favorite Color</th><br>    </tr><br>  </tfoot><br>  <tbody><br>    <tr><br>      <td>Jim</td><br>      <td>00001</td><br>      <td>Blue</td><br>    </tr><br>  </tbody><br></table>
+
+<p>###3、单元格：<code>td</code>和<code>th</code><br>在表格中一个独立的单元格总是<code>&lt;td&gt;</code>或<code>&lt;th&gt;</code>两者之一，只要你愿意，你可以把任何东西放进表格的单元格中，但要使这些元素成为表格中的单元格元素。<code>&lt;th&gt;</code>是“表格的标题”一般用在一列的第一格,里面的内容会自动加粗加黑他们，<code>&lt;td&gt;</code>是“表格的数据”。</p>
+<p>###4、基本样式<br>你看到的大多数表格都用颜色和线条来区别表格的不同部分。边框是非常常见的。默认的，所有的单元格相互之间都有2px的空隙<br>bordercolor =”边框颜色”<br>cellspacing =”单元格之间的距离，外边距”<br>cellpadding =”单元格与内容之间的距离，内边距”<br>bgcolor =”背景颜色”<br>align =”水平对齐方式”<br>valign =”垂直对齐方式”</p>
+<blockquote>
+<p>1、border-collapse：<br>用于表格属性, 表示表格的两边框合并为一条。 </p>
+<p>默认值：<strong>separate</strong>边框会被分开。不会忽略border-spacing 和 empty-cells 属性。<br><strong>collapse</strong>：如果可能，边框会合并为一个单一的边框。会忽略border-spacing 和 empty-cells 属性。<br><strong>inherit</strong>：规定应该从父元素继承border-collapse属性的值。</p>
+<p>2、 border-spacing:<br>属性设置相邻单元格的边框间的距离（仅用于“边框分离”模式）。</p>
+<p><strong>length length</strong>: 规定相邻单元的边框之间的距离。使用 px、cm 等单位。不允许使用负值。 如果定义一个 length 参数，那么定义的是水平和垂直间距。 如果定义两个 length参数，那么第一个设置水平间距，而第二个设置垂直间距。<br><strong>inherit</strong>:规定应该从父元素继承 border-spacing 属性的值。</p>
+</blockquote>
+<p>table表格td设置宽度后文字太多导致自动换行：<br>1.设置表格table的样式为：style=”table-layout:fixed;”<br>2.然后设置td的样式为：style=”word-wrap:break-word;”</p>
+<p>###5、合并单元格<br>有两个能应用在任何单元格中的重要的属性（<code>&lt;td&gt;</code>或<code>&lt;th&gt;</code>）：colspan 和 rowspan 。他们接受任何大于等于2的正整数。如果一个 td 元素的 colspan 值为2（<code>&lt;td colspan=&quot;2&quot;&gt;</code>），它将仍然是单独的单元格，但它<br>会在一行中水平的占据两个单元格的空间。rowspan也一样，但它作用于垂直方向。</p>
+<p>###6、使语义元素表现地像一个表格<br>display: table                /<em> <code>&lt;table&gt;</code>     </em>/<br>display: table-cell           /<em> <code>&lt;td&gt;</code>        </em>/<br>display: table-row            /<em> <code>&lt;tr&gt;</code>        </em>/<br>display: table-column         /<em> <code>&lt;col&gt;</code>       </em>/<br>display: table-column-group   /<em> <code>&lt;colgroup&gt;</code>  </em>/<br>display: table-footer-group   /<em> <code>&lt;tfoot&gt;</code>     </em>/<br>display: table-header-group   /<em> <code>&lt;thead&gt;</code>     </em>/</p>
+<p>注意这里没有<th>的值，这是因为语义的关系，</th><th>和</th><td>的表现实际上是相同的，所以没必要多增加这样一个值。</td></p>
+<p>display: inline-table<br>表格是自适应宽度的。它就像 inline-block 元素一样。顾名思义，这个值使得它们成为一个 inline-block 元素而不会产生换行。</p>
+<p>###7、colgroup与col<br>colgroup、col 标签用来定义表格列的分组。<br>通过使用 <code>&lt;colgroup&gt;</code>标签，可以向整个列应用样式，而不需要重复为每个单元格或每一行设置样式。<br>如果想对 <code>&lt;colgroup&gt;</code> 中的某列定义不同的属性，请在 <code>&lt;colgroup&gt;</code> 标签内使用 <code>&lt;col&gt;</code> 标签。<br>col标签为表格中一个或多个列定义属性值。<br>colgroup标签用于对表格中的列进行组合，以便对其进行格式化。 </p>
+<p>###8、“隐含”元素和未关闭的标签</p>
+<ul>
+<li><code>&lt;col&gt;</code>标签是属于那种无内容的不需要闭合的标签，类似<code>&lt;br&gt;/&lt;br /&gt;</code>；</li>
+<li><code>&lt;td&gt;</code>元素在这些情况中是无需闭合的：“如果<td>元素后面没有更多的<code>&lt;td&gt;或&lt;th&gt;</code>元素或者在它父元素中没有更多的内容，闭合标签是可以省略的。”；</td></li>
+<li>缺少的<code>&lt;/tr&gt;</code>标签的原理也是相同的：“如果<tr>元素后面没有紧跟着一个</tr><tr>元素或者如果它父元素组(<thead>,<br><tbody>或者 <tfoot>)没有更多的内容，结束标签是可以省略的。”；</tfoot></tbody></thead></tr></li>
+</ul>
+<p>###9、高亮鼠标所在的行/列/单元格<br>    td:hover {<br>      background: yellow;<br>    }<br>    tr:hover {<br>      background: yellow;<br>    }</p>
+<pre><code>鼠标移动动一个单元格的时候他所在的列与行全部选中
+var allCells = $(&quot;td, th&quot;);
+allCells.on(&quot;mouseover&quot;, function() {
+    var el = $(this),
+        pos = el.index();
+    el.parent().find(&quot;th, td&quot;).addClass(&quot;hover&quot;);
+    allCells.filter(&quot;:nth-child(&quot; + (pos+1) + &quot;)&quot;).addClass(&quot;hover&quot;);
+  })
+  .on(&quot;mouseout&quot;, function() {
+    allCells.removeClass(&quot;hover&quot;);
+  });
+
+ 表格自身设置圆角时需要设置border-collapse: separate;
+</code></pre>]]></content>
+      
+        <categories>
+            
+            <category> html </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> html </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[apply和call]]></title>
+      <url>/2017/04/26/JS%20apply%E5%92%8Ccall/</url>
+      <content type="html"><![CDATA[<p>####1.        apply和call的区别在哪里</p>
+<p>####2.        什么情况下用apply,什么情况下用call</p>
+<p>####3.        apply的其他巧妙用法（一般在什么情况下可以使用apply）</p>
+<blockquote>
+<p><strong>apply:方法能劫持另外一个对象的方法，继承另外一个对象的属性.</strong> Function.apply(obj,args)方法能接收两个参数 obj：这个对象将代替Function类里this对象<br>args：这个是数组，它将作为参数传给Function（args–&gt;arguments）</p>
+<p><strong>call:和apply的意思一样,只不过是参数列表不一样.</strong> Function.call(obj,[param1[,param2[,…[,paramN]]]])<br>obj：这个对象将代替Function类里this对象<br>params：这个是一个参数列表</p>
+</blockquote>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;  
+    /*定义一个人类*/  
+    function Person(name,age)  
+    {  
+        this.name=name;  
+        this.age=age;  
+    }  
+    /*定义一个学生类*/  
+    functionStudent(name,age,grade)  
+    {  
+        Person.apply(this,arguments);  
+        this.grade=grade;  
+    }  
+    //创建一个学生类  
+    var student=new Student(&quot;zhangsan&quot;,21,&quot;一年级&quot;);  
+    //测试  
+    alert(&quot;name:&quot;+student.name+&quot;\n&quot;+&quot;age:&quot;+student.age+&quot;\n&quot;+&quot;grade:&quot;+student.grade);  
+    //大家可以看到测试结果name:zhangsan age:21  grade:一年级  
+    //学生类里面我没有给name和age属性赋值啊,为什么又存在这两个属性的值呢,这个就是apply的神奇之处.  
+&lt;/script&gt;
+</code></pre><blockquote>
+<p>分析: Person.apply(this,arguments); this:在创建对象在这个时候代表的是student<br>arguments:是一个数组,也就是[“zhangsan”,”21”,”一年级”];<br>                   也就是通俗一点讲就是:用student去执行Person这个类里面的内容,在Person这个类里面存在this.name等之类的语句,这样就将属性创建到了student对象里面</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> js </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[JS小技巧]]></title>
       <url>/2017/04/26/JS%E5%B0%8F%E6%8A%80%E5%B7%A7/</url>
       <content type="html"><![CDATA[<p>##一、金钱格式转换<br>  1.英文钱格式转换<br>    $(“#id”).text().replace(/,/g,””);<br>  2.中文钱格式转换</p>
@@ -456,64 +514,6 @@ $(&apos;.item&apos;)[&apos;addClass&apos;](&apos;hover&apos;)==$(&apos;.item&apo
         <tags>
             
             <tag> js </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[table元素]]></title>
-      <url>/2017/04/26/thead/</url>
-      <content type="html"><![CDATA[<p>###1、<code>&lt;thead&gt;</code><br>整个第一行的部分没有包含数据，它只是每个列的标题。因此，我们可以<code>&lt;thead</code>&gt;元素来完成这件事情，它会包裹第一个<code>&lt;tr&gt;</code>元素(它会包裹所有的行所需要的头部信息)；<br>当你使用了<code>&lt;thead&gt;</code>元素后，<code>&lt;table&gt;</code>元素中不能有直接的<code>&lt;tr&gt;</code>子元素，所有的行必须存在于<code>&lt;thead&gt;</code>，<code>&lt;tbody&gt;</code>和<code>&lt;tfoot&gt;</code>里面。要注意的是我们会把所有的数据行包含在<code>&lt;tbody&gt;</code>里面。</p>
-<p>###2、<code>&lt;tfoot&gt;</code><br><code>&lt;tfoot&gt;</code>独一无二的一点是它在HTML中的位置，它紧跟着<code>&lt;thead&gt;</code>并位于<code>&lt;tbody&gt;</code>的前面！你可能会认为它是table标签结束前的最后一个元素，但情况并不是这样。因为页脚可能包含了用于理解表格的必要信息，因为在资源序列中它应当排在在数据的前面。 在一些元素位置根据需要从上至下跳动的布局中，<code>&lt;tfoot&gt;</code>是个不错的技巧。举个例子，虽然一个导航在屏幕的底部，但在HTML源码中导航应该在顶部。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;table&gt;   </div><div class="line">    &lt;thead&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;th&gt;Name&lt;/th&gt;</div><div class="line">            &lt;th&gt;ID&lt;/th&gt;</div><div class="line">            &lt;th&gt;Favorite Color&lt;/th&gt;</div><div class="line">        &lt;/tr&gt;   </div><div class="line">    &lt;/thead&gt;   </div><div class="line">    &lt;tfoot&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;th&gt;tfoot&lt;/th&gt;</div><div class="line">            &lt;th&gt;ID&lt;/th&gt;</div><div class="line">            &lt;th&gt;Favorite Color&lt;/th&gt;</div><div class="line">        &lt;/tr&gt;  </div><div class="line">    &lt;/tfoot&gt;   </div><div class="line">    &lt;tbody&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;td&gt;Jim&lt;/td&gt;</div><div class="line">            &lt;td&gt;00001&lt;/td&gt;</div><div class="line">            &lt;td&gt;Blue&lt;/td&gt;</div><div class="line">        &lt;/tr&gt;   </div><div class="line">    &lt;/tbody&gt; </div><div class="line">&lt;/table&gt;</div></pre></td></tr></table></figure></p>
-<table><br>  <thead><br>    <tr><br>      <th>Name</th><br>      <th>ID</th><br>      <th>Favorite Color</th><br>    </tr><br>  </thead><br>  <tfoot><br>    <tr><br>      <th>tfoot</th><br>      <th>ID</th><br>      <th>Favorite Color</th><br>    </tr><br>  </tfoot><br>  <tbody><br>    <tr><br>      <td>Jim</td><br>      <td>00001</td><br>      <td>Blue</td><br>    </tr><br>  </tbody><br></table>
-
-<p>###3、单元格：<code>td</code>和<code>th</code><br>在表格中一个独立的单元格总是<code>&lt;td&gt;</code>或<code>&lt;th&gt;</code>两者之一，只要你愿意，你可以把任何东西放进表格的单元格中，但要使这些元素成为表格中的单元格元素。<code>&lt;th&gt;</code>是“表格的标题”一般用在一列的第一格,里面的内容会自动加粗加黑他们，<code>&lt;td&gt;</code>是“表格的数据”。</p>
-<p>###4、基本样式<br>你看到的大多数表格都用颜色和线条来区别表格的不同部分。边框是非常常见的。默认的，所有的单元格相互之间都有2px的空隙<br>bordercolor =”边框颜色”<br>cellspacing =”单元格之间的距离，外边距”<br>cellpadding =”单元格与内容之间的距离，内边距”<br>bgcolor =”背景颜色”<br>align =”水平对齐方式”<br>valign =”垂直对齐方式”</p>
-<blockquote>
-<p>1、border-collapse：<br>用于表格属性, 表示表格的两边框合并为一条。 </p>
-<p>默认值：<strong>separate</strong>边框会被分开。不会忽略border-spacing 和 empty-cells 属性。<br><strong>collapse</strong>：如果可能，边框会合并为一个单一的边框。会忽略border-spacing 和 empty-cells 属性。<br><strong>inherit</strong>：规定应该从父元素继承border-collapse属性的值。</p>
-<p>2、 border-spacing:<br>属性设置相邻单元格的边框间的距离（仅用于“边框分离”模式）。</p>
-<p><strong>length length</strong>: 规定相邻单元的边框之间的距离。使用 px、cm 等单位。不允许使用负值。 如果定义一个 length 参数，那么定义的是水平和垂直间距。 如果定义两个 length参数，那么第一个设置水平间距，而第二个设置垂直间距。<br><strong>inherit</strong>:规定应该从父元素继承 border-spacing 属性的值。</p>
-</blockquote>
-<p>table表格td设置宽度后文字太多导致自动换行：<br>1.设置表格table的样式为：style=”table-layout:fixed;”<br>2.然后设置td的样式为：style=”word-wrap:break-word;”</p>
-<p>###5、合并单元格<br>有两个能应用在任何单元格中的重要的属性（<code>&lt;td&gt;</code>或<code>&lt;th&gt;</code>）：colspan 和 rowspan 。他们接受任何大于等于2的正整数。如果一个 td 元素的 colspan 值为2（<code>&lt;td colspan=&quot;2&quot;&gt;</code>），它将仍然是单独的单元格，但它<br>会在一行中水平的占据两个单元格的空间。rowspan也一样，但它作用于垂直方向。</p>
-<p>###6、使语义元素表现地像一个表格<br>display: table                /<em> <code>&lt;table&gt;</code>     </em>/<br>display: table-cell           /<em> <code>&lt;td&gt;</code>        </em>/<br>display: table-row            /<em> <code>&lt;tr&gt;</code>        </em>/<br>display: table-column         /<em> <code>&lt;col&gt;</code>       </em>/<br>display: table-column-group   /<em> <code>&lt;colgroup&gt;</code>  </em>/<br>display: table-footer-group   /<em> <code>&lt;tfoot&gt;</code>     </em>/<br>display: table-header-group   /<em> <code>&lt;thead&gt;</code>     </em>/</p>
-<p>注意这里没有<th>的值，这是因为语义的关系，</th><th>和</th><td>的表现实际上是相同的，所以没必要多增加这样一个值。</td></p>
-<p>display: inline-table<br>表格是自适应宽度的。它就像 inline-block 元素一样。顾名思义，这个值使得它们成为一个 inline-block 元素而不会产生换行。</p>
-<p>###7、colgroup与col<br>colgroup、col 标签用来定义表格列的分组。<br>通过使用 <code>&lt;colgroup&gt;</code>标签，可以向整个列应用样式，而不需要重复为每个单元格或每一行设置样式。<br>如果想对 <code>&lt;colgroup&gt;</code> 中的某列定义不同的属性，请在 <code>&lt;colgroup&gt;</code> 标签内使用 <code>&lt;col&gt;</code> 标签。<br>col标签为表格中一个或多个列定义属性值。<br>colgroup标签用于对表格中的列进行组合，以便对其进行格式化。 </p>
-<p>###8、“隐含”元素和未关闭的标签</p>
-<ul>
-<li><code>&lt;col&gt;</code>标签是属于那种无内容的不需要闭合的标签，类似<code>&lt;br&gt;/&lt;br /&gt;</code>；</li>
-<li><code>&lt;td&gt;</code>元素在这些情况中是无需闭合的：“如果<td>元素后面没有更多的<code>&lt;td&gt;或&lt;th&gt;</code>元素或者在它父元素中没有更多的内容，闭合标签是可以省略的。”；</td></li>
-<li>缺少的<code>&lt;/tr&gt;</code>标签的原理也是相同的：“如果<tr>元素后面没有紧跟着一个</tr><tr>元素或者如果它父元素组(<thead>,<br><tbody>或者 <tfoot>)没有更多的内容，结束标签是可以省略的。”；</tfoot></tbody></thead></tr></li>
-</ul>
-<p>###9、高亮鼠标所在的行/列/单元格<br>    td:hover {<br>      background: yellow;<br>    }<br>    tr:hover {<br>      background: yellow;<br>    }</p>
-<pre><code>鼠标移动动一个单元格的时候他所在的列与行全部选中
-var allCells = $(&quot;td, th&quot;);
-allCells.on(&quot;mouseover&quot;, function() {
-    var el = $(this),
-        pos = el.index();
-    el.parent().find(&quot;th, td&quot;).addClass(&quot;hover&quot;);
-    allCells.filter(&quot;:nth-child(&quot; + (pos+1) + &quot;)&quot;).addClass(&quot;hover&quot;);
-  })
-  .on(&quot;mouseout&quot;, function() {
-    allCells.removeClass(&quot;hover&quot;);
-  });
-
- 表格自身设置圆角时需要设置border-collapse: separate;
-</code></pre>]]></content>
-      
-        <categories>
-            
-            <category> html </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> html </tag>
             
         </tags>
         
