@@ -91,15 +91,17 @@
 
 
 
-<meta name="description" content="记录生活点滴">
-<meta property="og:type" content="website">
-<meta property="og:title" content="阿呆">
-<meta property="og:url" content="http://wangadai.github.io/index.html">
+<meta name="description" content="需要了解事件的什么？对于事件来讲，首先，我们需要了解这样几个概念：事件；事件处理程序；事件类型；事件流；事件冒泡；事件捕获；事件对象；事件方面的性能优化（事件委托、移除事件处理程序）；常见的浏览器兼容问题。 事件的概念事件：指的是文档或者浏览器窗口中发生的一些特定交互瞬间。我们可以通过侦听器（或者处理程序）来预定事件，以便事件发生的时候执行相应的代码。  JavaScript鼠标事件  oncl">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript事件初识">
+<meta property="og:url" content="http://wangadai.github.io/2017/04/28/JavaScript事件初识/index.html">
 <meta property="og:site_name" content="阿呆">
-<meta property="og:description" content="记录生活点滴">
+<meta property="og:description" content="需要了解事件的什么？对于事件来讲，首先，我们需要了解这样几个概念：事件；事件处理程序；事件类型；事件流；事件冒泡；事件捕获；事件对象；事件方面的性能优化（事件委托、移除事件处理程序）；常见的浏览器兼容问题。 事件的概念事件：指的是文档或者浏览器窗口中发生的一些特定交互瞬间。我们可以通过侦听器（或者处理程序）来预定事件，以便事件发生的时候执行相应的代码。  JavaScript鼠标事件  oncl">
+<meta property="og:updated_time" content="2017-04-28T02:48:46.424Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿呆">
-<meta name="twitter:description" content="记录生活点滴">
+<meta name="twitter:title" content="JavaScript事件初识">
+<meta name="twitter:description" content="需要了解事件的什么？对于事件来讲，首先，我们需要了解这样几个概念：事件；事件处理程序；事件类型；事件流；事件冒泡；事件捕获；事件对象；事件方面的性能优化（事件委托、移除事件处理程序）；常见的浏览器兼容问题。 事件的概念事件：指的是文档或者浏览器窗口中发生的一些特定交互瞬间。我们可以通过侦听器（或者处理程序）来预定事件，以便事件发生的时候执行相应的代码。  JavaScript鼠标事件  oncl">
 
 
 
@@ -127,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://wangadai.github.io/"/>
+  <link rel="canonical" href="http://wangadai.github.io/2017/04/28/JavaScript事件初识/"/>
 
 
 
 
 
-  <title> 阿呆 </title>
+  <title> JavaScript事件初识 | 阿呆 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -168,9 +170,7 @@
     
   
 
-  <div class="container sidebar-position-right 
-   page-home 
- ">
+  <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -287,9 +287,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -319,10 +319,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/04/28/JavaScript事件初识/" itemprop="url">
-                  JavaScript事件初识
-                </a>
+                JavaScript事件初识
               
             
           </h1>
@@ -379,6 +376,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
 
           
 
@@ -395,32 +397,143 @@
       
 
       
+        <blockquote>
+<p><strong>需要了解事件的什么？</strong><br>对于事件来讲，首先，我们需要了解这样几个概念：事件；事件处理程序；事件类型；事件流；事件冒泡；事件捕获；事件对象；事件方面的性能优化（事件委托、移除事件处理程序）；常见的浏览器兼容问题。</p>
+<p><strong>事件的概念</strong><br>事件：指的是文档或者浏览器窗口中发生的一些特定交互瞬间。我们可以通过侦听器（或者处理程序）来预定事件，以便事件发生的时候执行相应的代码。</p>
+</blockquote>
+<p><strong>JavaScript鼠标事件</strong></p>
+<blockquote>
+<p><code>onclick</code> 鼠标单击事件<br><code>ondblclick</code> 鼠标双击事件<br><code>onmousedown</code> 鼠标按下事件<br><code>onmouseup</code> 鼠标抬起事件<br><code>onmousemove</code> 鼠标移动事件<br><code>onmouseover</code> 鼠标移入事件<br><code>onmouseout</code> 鼠标移出事件</p>
+</blockquote>
+<p><strong>JavaScript键盘事件</strong></p>
+<blockquote>
+<p><code>onkeyup</code> 鼠标弹起事件<br><code>onkeydown</code> 鼠标按下事件<br><code>onkeypress</code> 鼠标按下或按住</p>
+</blockquote>
+<p><strong>JavaScript表单事件</strong></p>
+<blockquote>
+<p><code>onsubmit</code> 提交表单<br><code>onfocus</code> ：获取焦点事件、获取焦点的时候触发<br><code>onblur</code>： 失去焦点事件、失去焦点的时候触发<br><code>onchange</code> 改变input</p>
+</blockquote>
+<p>obj.focus() 给指定元素设置焦点<br>obj.blur() 取消指定元素的的焦点<br>obj.select()  这个方法是选中指定元素里面的文本内容<br>当 textarea 或文本类型的 input 元素中的文本被选择时，会发生 select 事件。</p>
+<p><strong>JavaScript页面事件</strong><br><code>onload</code> 页面加载</p>
+<p>补充事件:<br><code>onscroll</code> 滚轮<br><code>onresize</code> 监控浏览器尺寸变化</p>
+<p><strong>事件对象</strong></p>
+<blockquote>
+<p><em>一、什么是事件对象</em><br>用来记录一些事件发生时的相关的信息的对象<br>1.只有当事件发生的时候才产生，只能在处理函数内部访问<br>2.处理函数运行结束后自动销毁。</p>
+<p>当一个事件被触发时，会创建一个事件对象(Event Object),<br>这个对象里面包含了与该事件相关的属性或者方法。该对象会作为第一个参数传递给监听函数。</p>
+</blockquote>
+<p><strong>事件对象的属性</strong></p>
+<blockquote>
+<p><strong><em>相对于浏览器位置的</em></strong><br>clientX 当鼠标事件发生的时候，鼠标相对于浏览器X轴的位置<br>clientY 当鼠标事件发生的时候，鼠标相对于浏览器Y轴的位置<br><strong><em>相对于屏幕位置的</em></strong><br>screenX 当鼠标事件发生的时候，鼠标相对于屏幕X轴的位置<br>screenY 当鼠标事件发生的时候，鼠标相对于屏幕Y轴的位置<br><strong><em>相对于事件源的位置</em></strong><br>offsetX 当鼠标事件发生的时候，鼠标相对于事件源X轴的位置<br>offsetY 当鼠标事件发生的时候，鼠标相对于事件源Y轴的位置</p>
+</blockquote>
+<p><strong>事件流</strong></p>
+<blockquote>
+<p>事件是与浏览器或文档交互的瞬间，如点击按钮，填写表格等，它是JS与HTML之间交互的桥梁。DOM是树形结构，如果同时给父子节点都绑定事件时，当触发子节点的时候，这两个事件的发生顺序如何决定?这就涉及到事件流的概念，它描述的是页面中接受事件的顺序。</p>
+<p>当页面元素触发事件的时候，该元素的容器以及整个页面都 会按照特定顺序响应该元素的触发事件，事件传播的顺序叫 做事件流程。</p>
+</blockquote>
+<p><strong>事件流的分类</strong><br><strong>1</strong>.冒泡型事件(所有的浏览器都支持)<br>由明确的事件源到最不确定的事件源依次向上触发。<br><strong>冒泡的案例:</strong></p>
+<pre><code>&lt;div id=&quot;s1&quot;&gt;s1
+     &lt;div id=&quot;s2&quot;&gt;s2&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;script&gt;
+     s1.addEventListener(&quot;click&quot;,function(e){
+       alert(&quot;s1 冒泡事件&quot;);
+     },false);
+     s2.addEventListener(&quot;click&quot;,function(e){
+       alert(&quot;s2 冒泡事件&quot;);
+     },false);
+   &lt;/script&gt;
+</code></pre><p>当我们点击s2的时候，执行结果如下：<br>//s2 冒泡事件<br>//s1 冒泡事件<br><a href="http://runjs.cn/detail/kj4jgpli" target="_blank" rel="external">点击预览</a></p>
+<p><strong>2</strong>.捕获型事件(IE不支持 w3c标准 火狐)<br>不确定的事件源到明确的事件源一次向下触发。<br><strong>捕获的案例</strong></p>
+<pre><code>&lt;div id=&quot;s1&quot;&gt;s1
+  &lt;div id=&quot;s2&quot;&gt;s2&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+  s1.addEventListener(&quot;click&quot;,function(e){
+    alert(&quot;s1 捕获事件&quot;);
+  },true);
+  s2.addEventListener(&quot;click&quot;,function(e){
+    alert(&quot;s2 捕获事件&quot;);
+  },true);
+&lt;/script&gt;
+</code></pre><p>当我们点击s2的时候，执行结果如下：<br>//s1 捕获事件<br>//s2 捕获事件<br><a href="http://runjs.cn/detail/c3mjulm0" target="_blank" rel="external">点击预览</a></p>
+<blockquote>
+<p>首先在 IE 下的方法：<br>obj.attachEvent(事件名称,事件函数)<br>1、 在非标准IE下是没有事件捕获的，也就是说这个方法绑定函数，不存在事件捕获<br>2、 事件名称是带on的<br>3、 事件执行的顺序  标准IE下正序，在非标准IE下反序<br>相对应的取消事件：<br>obj.dettachEvent(事件名称,事件函数)</p>
+<p>标准浏览器下 ：<br>obj.addEventListener(事件名称,事件函数,是否捕获)；<br>（ 第三个参数默认是false ：代表冒泡 true:代表捕获 ）<br>事件绑定取消 ： obj.removeEventListener(事件名称,事件函数,是否捕获), 传入的参数和绑定事件传入的参数要保持一致</p>
+<p>事件的默认事件 （浏览器自带的行为，比如我们在浏览器中点击右键会弹出菜单，这就是默认行为）<br>以下是我最近用到的一个，（多级连续点击会出现一个选中的状态）以下方法可以取消掉 obj.on(“selectstart”,<br>function() {return false;});</p>
+</blockquote>
+<p><strong><em>事件捕获vs事件冒泡</em></strong><br>当事件捕获和事件冒泡一起存在的情况，事件又是如何触发呢。</p>
+<p>这里记被点击的DOM节点为target节点<br>1、对于非target节点则先执行捕获在执行冒泡<br>2、对于target节点则是先执行先注册的事件，无论冒泡还是捕获</p>
+<pre><code>&lt;div id=&quot;s1&quot;&gt;s1
+  &lt;div id=&quot;s2&quot;&gt;s2&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+s1.addEventListener(&quot;click&quot;,function(e){
+  alert(&quot;s1 冒泡事件&quot;);         
+},false);
+s2.addEventListener(&quot;click&quot;,function(e){
+  alert(&quot;s2 冒泡事件&quot;);
+},false);
+
+s1.addEventListener(&quot;click&quot;,function(e){
+  alert(&quot;s1 捕获事件&quot;);
+},true);
+
+s2.addEventListener(&quot;click&quot;,function(e){
+  alert(&quot;s2 捕获事件&quot;);
+},true);
+&lt;/script&gt;
+</code></pre><p>当我们点击s2的时候,执行结果如下：<br>//s1 捕获事件<br>//s2 冒泡事件<br>//s2 捕获事件<br>//s1 冒泡事件<br><a href="http://runjs.cn/detail/fkq3uyqh" target="_blank" rel="external">点击预览</a></p>
+<blockquote>
+<p>这里大体分析下执行结果<br>点击 s2 ， click 事件从 document-&gt;html-&gt;body-&gt;s1-&gt;s2 (捕获前进)<br>这里在s1上发现了捕获注册事件，则输出”s1 捕获事件”<br>到达s2，已经到达目的节点，<br>s2上注册了冒泡和捕获事件，先注册的冒泡后注册的捕获，则先执行冒泡，输出”s2 冒泡事件”<br>再在s2上执行后注册的事件，即捕获事件，输出”s2 捕获事件”<br>下面进入冒泡阶段，按照 s2-&gt;s1-&gt;body-&gt;html-&gt;documen (冒泡前进)<br>在s1上发现了冒泡事件，则输出”s1 冒泡事件”</p>
+</blockquote>
+<p>阻止事件流(事件对象)<br>IE: 事件对象.cancelBubble=true;<br>FF: 事件对象.stopPropagation();<br>获得目标事件源的对象<br>IE： 事件对象.srcElement<br>FF: 事件对象.target<br>事件对象阻止浏览器默认行为<br>if (ev.preventDefault )<br>ev.preventDefault(); //阻止默认浏览器动作(W3C)<br>else<br>ev.returnValue = false;//IE中阻止函数器默认动作的方<br>式</p>
+<blockquote>
+<p>我们一般用到的都是冒泡捕获型事件 在实际的开发当中，利用事件流的特性，我们可以使用一种叫做事件代理的方法。</p>
+</blockquote>
+<p>举个栗子？<br>假设有一个 UL 的父节点，包含了很多个 Li 的子节点：</p>
+<pre><code>&lt;ul id=&quot;parent-list&quot;&gt;
+  &lt;li id=&quot;post-1&quot;&gt;Item 1&lt;/li&gt;
+  &lt;li id=&quot;post-2&quot;&gt;Item 2&lt;/li&gt;
+  &lt;li id=&quot;post-3&quot;&gt;Item 3&lt;/li&gt;
+  &lt;li id=&quot;post-4&quot;&gt;Item 4&lt;/li&gt;
+  &lt;li id=&quot;post-5&quot;&gt;Item 5&lt;/li&gt;
+  &lt;li id=&quot;post-6&quot;&gt;Item 6&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p>我们通常的做法是对每一个元素进行循环操作添加监听事件：</p>
+<pre><code>var oUl=document.getElementById(&quot;parent-list&quot;);
+var aLi=oUl.getElementsByTagName(&apos;li&apos;);
+for (var i = 0; i &lt; aLi.length; i++) {
+    aLi[i].onclick=function () {
+        ......
+    }
+}
+</code></pre><p>如果这个UL中的Li子元素会频繁地添加或者删除，我们就需要在每次添加Li添加事件处理函数，这就增加了复杂度和出错的可能性。</p>
+<p>更简单的方法是使用事件代理机制，当事件被抛到更上层的父节点的时候，我们通过检查事件的目标对象（target）来判断并获取事件源Li。<br><strong><em>优点：</em></strong><br>1、相比之前遍历每一个li在绑定一个事件感觉爽了很多；<br>2、很明显没有了for 性能肯定是有提升；<br>3、动态的添加新的元素还是会有之前的事件（因为不管怎么样还是要冒泡到父元素的嘛）；</p>
+<blockquote>
+<p>为父节点添加一个click事件，当子节点被点击的时候，click事件会从子节点开始向上冒泡。父节点捕获到事件之后，通过判断e.target.nodeName来判断是否为我们需要处理的节点。并且通过e.target拿到了被点击的Li节点。从而可以获取到相应的信息，并作处理。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
         
-          
-          
-需要了解事件的什么？对于事件来讲，首先，我们需要了解这样几个概念：事件；事件处理程序；事件类型；事件流；事件冒泡；事件捕获；事件对象；事件方面的性能优化（事件委托、移除事件处理程序）；常见的浏览器兼容问题。
-事件的概念事件：指的是文档或者浏览器窗口中发生的一些特定交互瞬间。我们可以通过侦听器（或者
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/28/JavaScript事件初识/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
-      
-    </div>
-
-    <div>
       
     </div>
 
@@ -428,21 +541,45 @@
       
 
       
-
+        
       
 
       
+
       
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -450,6 +587,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -709,6 +850,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
