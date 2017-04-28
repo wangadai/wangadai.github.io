@@ -120,7 +120,9 @@ NexT.utils = NexT.$u = {
         wrap.className = 'fluid-vids';
         wrap.style.position = 'relative';
         wrap.style.marginBottom = '20px';
-        wrap.style.width = '100%';
+        wrap.style.width = '351px';
+        wrap.style.height = '38px';
+        wrap.style.left = '-112px';
         wrap.style.paddingTop = videoRatio + '%';
 
         // Add the iframe inside our newly created <div>
