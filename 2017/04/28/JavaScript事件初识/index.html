@@ -75,7 +75,7 @@
 <link href="/css/main.css?v=1.0.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JS," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -91,17 +91,17 @@
 
 
 
-<meta name="description" content="需要了解事件的什么？对于事件来讲，首先，我们需要了解这样几个概念：事件；事件处理程序；事件类型；事件流；事件冒泡；事件捕获；事件对象；事件方面的性能优化（事件委托、移除事件处理程序）；常见的浏览器兼容问题。 事件的概念事件：指的是文档或者浏览器窗口中发生的一些特定交互瞬间。我们可以通过侦听器（或者处理程序）来预定事件，以便事件发生的时候执行相应的代码。  JavaScript鼠标事件  oncl">
-<meta name="keywords" content="JS">
+<meta name="description" content="需要了解事件的什么？对于事件来讲，首先，我们需要了解这样几个概念：事件；事件处理程序；事件类型；事件流；事件冒泡；事件捕获；事件对象；事件方面的性能优化（事件委托、移除事件处理程序）；常见的浏览器兼容问题。 事件的概念事件：指的是文档或者浏览器窗口中发生的一些特定交互瞬间。我们可以通过侦听器（或者处理程序）来预定事件，以便事件发生的时候执行相应的代码。  JavaScript鼠标事件 oncli">
+<meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript事件初识">
 <meta property="og:url" content="http://wangadai.github.io/2017/04/28/JavaScript事件初识/index.html">
 <meta property="og:site_name" content="阿呆">
-<meta property="og:description" content="需要了解事件的什么？对于事件来讲，首先，我们需要了解这样几个概念：事件；事件处理程序；事件类型；事件流；事件冒泡；事件捕获；事件对象；事件方面的性能优化（事件委托、移除事件处理程序）；常见的浏览器兼容问题。 事件的概念事件：指的是文档或者浏览器窗口中发生的一些特定交互瞬间。我们可以通过侦听器（或者处理程序）来预定事件，以便事件发生的时候执行相应的代码。  JavaScript鼠标事件  oncl">
-<meta property="og:updated_time" content="2017-04-29T07:38:12.281Z">
+<meta property="og:description" content="需要了解事件的什么？对于事件来讲，首先，我们需要了解这样几个概念：事件；事件处理程序；事件类型；事件流；事件冒泡；事件捕获；事件对象；事件方面的性能优化（事件委托、移除事件处理程序）；常见的浏览器兼容问题。 事件的概念事件：指的是文档或者浏览器窗口中发生的一些特定交互瞬间。我们可以通过侦听器（或者处理程序）来预定事件，以便事件发生的时候执行相应的代码。  JavaScript鼠标事件 oncli">
+<meta property="og:updated_time" content="2017-04-29T08:05:08.764Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript事件初识">
-<meta name="twitter:description" content="需要了解事件的什么？对于事件来讲，首先，我们需要了解这样几个概念：事件；事件处理程序；事件类型；事件流；事件冒泡；事件捕获；事件对象；事件方面的性能优化（事件委托、移除事件处理程序）；常见的浏览器兼容问题。 事件的概念事件：指的是文档或者浏览器窗口中发生的一些特定交互瞬间。我们可以通过侦听器（或者处理程序）来预定事件，以便事件发生的时候执行相应的代码。  JavaScript鼠标事件  oncl">
+<meta name="twitter:description" content="需要了解事件的什么？对于事件来讲，首先，我们需要了解这样几个概念：事件；事件处理程序；事件类型；事件流；事件冒泡；事件捕获；事件对象；事件方面的性能优化（事件委托、移除事件处理程序）；常见的浏览器兼容问题。 事件的概念事件：指的是文档或者浏览器窗口中发生的一些特定交互瞬间。我们可以通过侦听器（或者处理程序）来预定事件，以便事件发生的时候执行相应的代码。  JavaScript鼠标事件 oncli">
 
 
 
@@ -357,6 +357,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
 
@@ -389,36 +411,30 @@
 <p><strong>需要了解事件的什么？</strong><br>对于事件来讲，首先，我们需要了解这样几个概念：事件；事件处理程序；事件类型；事件流；事件冒泡；事件捕获；事件对象；事件方面的性能优化（事件委托、移除事件处理程序）；常见的浏览器兼容问题。</p>
 <p><strong>事件的概念</strong><br>事件：指的是文档或者浏览器窗口中发生的一些特定交互瞬间。我们可以通过侦听器（或者处理程序）来预定事件，以便事件发生的时候执行相应的代码。</p>
 </blockquote>
-<p><strong>JavaScript鼠标事件</strong></p>
-<blockquote>
+<h3 id="JavaScript鼠标事件"><a href="#JavaScript鼠标事件" class="headerlink" title="JavaScript鼠标事件"></a>JavaScript鼠标事件</h3><blockquote>
 <p><code>onclick</code> 鼠标单击事件<br><code>ondblclick</code> 鼠标双击事件<br><code>onmousedown</code> 鼠标按下事件<br><code>onmouseup</code> 鼠标抬起事件<br><code>onmousemove</code> 鼠标移动事件<br><code>onmouseover</code> 鼠标移入事件<br><code>onmouseout</code> 鼠标移出事件</p>
 </blockquote>
-<p><strong>JavaScript键盘事件</strong></p>
-<blockquote>
+<h3 id="JavaScript键盘事件"><a href="#JavaScript键盘事件" class="headerlink" title="JavaScript键盘事件"></a>JavaScript键盘事件</h3><blockquote>
 <p><code>onkeyup</code> 鼠标弹起事件<br><code>onkeydown</code> 鼠标按下事件<br><code>onkeypress</code> 鼠标按下或按住</p>
 </blockquote>
-<p><strong>JavaScript表单事件</strong></p>
-<blockquote>
+<h3 id="JavaScript表单事件"><a href="#JavaScript表单事件" class="headerlink" title="JavaScript表单事件"></a>JavaScript表单事件</h3><blockquote>
 <p><code>onsubmit</code> 提交表单<br><code>onfocus</code> ：获取焦点事件、获取焦点的时候触发<br><code>onblur</code>： 失去焦点事件、失去焦点的时候触发<br><code>onchange</code> 改变input</p>
 </blockquote>
 <p>obj.focus() 给指定元素设置焦点<br>obj.blur() 取消指定元素的的焦点<br>obj.select()  这个方法是选中指定元素里面的文本内容<br>当 textarea 或文本类型的 input 元素中的文本被选择时，会发生 select 事件。</p>
-<p><strong>JavaScript页面事件</strong><br><code>onload</code> 页面加载</p>
-<p>补充事件:<br><code>onscroll</code> 滚轮<br><code>onresize</code> 监控浏览器尺寸变化</p>
-<p><strong>事件对象</strong></p>
-<blockquote>
+<h3 id="JavaScript页面事件"><a href="#JavaScript页面事件" class="headerlink" title="JavaScript页面事件"></a>JavaScript页面事件</h3><p><code>onload</code> 页面加载</p>
+<h3 id="补充事件"><a href="#补充事件" class="headerlink" title="补充事件:"></a>补充事件:</h3><p><code>onscroll</code> 滚轮<br><code>onresize</code> 监控浏览器尺寸变化</p>
+<h3 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h3><blockquote>
 <p><em>一、什么是事件对象</em><br>用来记录一些事件发生时的相关的信息的对象<br>1.只有当事件发生的时候才产生，只能在处理函数内部访问<br>2.处理函数运行结束后自动销毁。</p>
 <p>当一个事件被触发时，会创建一个事件对象(Event Object),<br>这个对象里面包含了与该事件相关的属性或者方法。该对象会作为第一个参数传递给监听函数。</p>
 </blockquote>
-<p><strong>事件对象的属性</strong></p>
-<blockquote>
+<h3 id="事件对象的属性"><a href="#事件对象的属性" class="headerlink" title="事件对象的属性"></a>事件对象的属性</h3><blockquote>
 <p><strong><em>相对于浏览器位置的</em></strong><br>clientX 当鼠标事件发生的时候，鼠标相对于浏览器X轴的位置<br>clientY 当鼠标事件发生的时候，鼠标相对于浏览器Y轴的位置<br><strong><em>相对于屏幕位置的</em></strong><br>screenX 当鼠标事件发生的时候，鼠标相对于屏幕X轴的位置<br>screenY 当鼠标事件发生的时候，鼠标相对于屏幕Y轴的位置<br><strong><em>相对于事件源的位置</em></strong><br>offsetX 当鼠标事件发生的时候，鼠标相对于事件源X轴的位置<br>offsetY 当鼠标事件发生的时候，鼠标相对于事件源Y轴的位置</p>
 </blockquote>
-<p><strong>事件流</strong></p>
-<blockquote>
+<h3 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h3><blockquote>
 <p>事件是与浏览器或文档交互的瞬间，如点击按钮，填写表格等，它是JS与HTML之间交互的桥梁。DOM是树形结构，如果同时给父子节点都绑定事件时，当触发子节点的时候，这两个事件的发生顺序如何决定?这就涉及到事件流的概念，它描述的是页面中接受事件的顺序。</p>
 <p>当页面元素触发事件的时候，该元素的容器以及整个页面都 会按照特定顺序响应该元素的触发事件，事件传播的顺序叫 做事件流程。</p>
 </blockquote>
-<p><strong>事件流的分类</strong><br><strong>1</strong>.冒泡型事件(所有的浏览器都支持)<br>由明确的事件源到最不确定的事件源依次向上触发。<br><strong>冒泡的案例:</strong></p>
+<h4 id="事件流的分类"><a href="#事件流的分类" class="headerlink" title="事件流的分类"></a>事件流的分类</h4><p><strong>1</strong>.冒泡型事件(所有的浏览器都支持)<br>由明确的事件源到最不确定的事件源依次向上触发。<br><strong>冒泡的案例:</strong></p>
 <pre><code>&lt;div id=&quot;s1&quot;&gt;s1
      &lt;div id=&quot;s2&quot;&gt;s2&lt;/div&gt;
    &lt;/div&gt;
@@ -527,12 +543,6 @@ for (var i = 0; i &lt; aLi.length; i++) {
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/JS/" rel="tag"># JS</a>
-          
-        </div>
-      
 
       
         
@@ -542,18 +552,14 @@ for (var i = 0; i &lt; aLi.length; i++) {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/29/CSS/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/28/forme/" rel="prev" title="Hexo博客添加Fork me on GitHub">
-                Hexo博客添加Fork me on GitHub <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/28/CSS/" rel="prev" title="CSS实现垂直居中水平居中的绝对定位居中技术">
+                CSS实现垂直居中水平居中的绝对定位居中技术 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -620,8 +626,17 @@ for (var i = 0; i &lt; aLi.length; i++) {
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/adai.png"
@@ -643,16 +658,16 @@ for (var i = 0; i &lt; aLi.length; i++) {
           
 
           
-
-          
             
             
-            <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">标签</span>
-              
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
             </div>
+          
+
           
 
         </nav>
@@ -710,6 +725,22 @@ for (var i = 0; i &lt; aLi.length; i++) {
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript鼠标事件"><span class="nav-number">1.</span> <span class="nav-text">JavaScript鼠标事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript键盘事件"><span class="nav-number">2.</span> <span class="nav-text">JavaScript键盘事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript表单事件"><span class="nav-number">3.</span> <span class="nav-text">JavaScript表单事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript页面事件"><span class="nav-number">4.</span> <span class="nav-text">JavaScript页面事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充事件"><span class="nav-number">5.</span> <span class="nav-text">补充事件:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件对象"><span class="nav-number">6.</span> <span class="nav-text">事件对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件对象的属性"><span class="nav-number">7.</span> <span class="nav-text">事件对象的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件流"><span class="nav-number">8.</span> <span class="nav-text">事件流</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#事件流的分类"><span class="nav-number">8.1.</span> <span class="nav-text">事件流的分类</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
