@@ -121,7 +121,7 @@ NexT.utils = NexT.$u = {
         wrap.style.position = 'relative';
         wrap.style.marginBottom = '20px';
         wrap.style.width = '351px';
-        wrap.style.height = '38px';
+        wrap.style.height = '0px';
         wrap.style.left = '-112px';
         wrap.style.paddingTop = videoRatio + '%';
 
