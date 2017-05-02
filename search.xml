@@ -3,22 +3,6 @@
   
     
     <entry>
-      <title><![CDATA[Hexo博客添加Fork me on GitHub]]></title>
-      <url>/2017/04/28/forme/</url>
-      <content type="html"><![CDATA[<p>1 . 去网址<a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="external">https://github.com/blog/273-github-ribbons</a> 挑选自己喜欢的样式，并复制代码。<br>2 . 修改主题文件。以我用的next主题为例,粘贴刚才复制的代码到 themes/next/layout/_layout.swig文件中，修改后的的文件内容如下 <img src="http://op28wafvd.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170429150201.png" alt="此处输入图片的描述"></p>
-<p>3 . 再把其中的链接地址改为你的github地址。如上图修改红框中地址。</p>
-]]></content>
-      
-        <categories>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[CSS实现垂直居中水平居中的绝对定位居中技术]]></title>
       <url>/2017/04/28/CSS/</url>
       <content type="html"><![CDATA[<h3 id="1、绝对定位居中（子元素需设置宽高）"><a href="#1、绝对定位居中（子元素需设置宽高）" class="headerlink" title="1、绝对定位居中（子元素需设置宽高）"></a>1、绝对定位居中（子元素需设置宽高）</h3><p>内容块的父容器：position:relative;<br>子元素：position: absolute;top: 0;left: 0;bottom: 0;right: 0;margin:auto; （必须设置高度）</p>
@@ -218,6 +202,96 @@
     </entry>
     
     <entry>
+      <title><![CDATA[Hexo + Github Pages搭建个人独立博客]]></title>
+      <url>/2017/04/28/Hexo%20+%20Github/</url>
+      <content type="html"><![CDATA[<h2 id="系统环境配置"><a href="#系统环境配置" class="headerlink" title="系统环境配置"></a>系统环境配置</h2><ol>
+<li>安装Node.js  <a href="http://nodejs.cn/download/" target="_blank" rel="external">下载Node.js</a>    <a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="external">安装Node.js</a></li>
+<li>安装Git  <a href="https://git-scm.com/download/" target="_blank" rel="external">下载地址</a></li>
+</ol>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>大家估计都有被“墙”的经历，安装hexo为了避免出现类似情况，我使用淘宝NPM镜像,输入以下命令等待安装完成</p>
+<pre><code>$ npm install -g cnpm --registry=https://registry.npm.taobao.org
+</code></pre><p>使用淘宝NPM安装Hexo</p>
+<pre><code>$ cnpm install -g hexo-cli
+</code></pre><p>成功以后继续输入以下命令</p>
+<pre><code>$ cnpm install hexo --save
+</code></pre><p>安装完成后，在输入命令，验证是否安装正确</p>
+<pre><code>$ hexo -v
+</code></pre><p><img src="http://op28wafvd.bkt.clouddn.com/hexov.png" alt="此处输入图片的描述"></p>
+<h2 id="申请GitHub"><a href="#申请GitHub" class="headerlink" title="申请GitHub"></a>申请GitHub</h2><ul>
+<li><a href="https://github.com/" target="_blank" rel="external">点击注册GitHub</a></li>
+<li><p>按下图分别输入用户名、邮箱、密码，然后点击注册 <img src="http://op28wafvd.bkt.clouddn.com/hexo2.png" alt="此处输入图片的描述"></p>
+</li>
+<li><p>点击”New repository”，新建一个版本库 <img src="http://op28wafvd.bkt.clouddn.com/hexo3.png" alt="此处输入图片的描述"></p>
+</li>
+<li><p>输入Repository name:yourname.github.io(yourname与你的注册用户名一致,这个就是你博客的域名了) <img src="http://op28wafvd.bkt.clouddn.com/hexo4.png" alt="此处输入图片的描述"></p>
+</li>
+</ul>
+<p>到此github帐号申请完成</p>
+<h2 id="建立站点"><a href="#建立站点" class="headerlink" title="建立站点"></a>建立站点</h2><pre><code>$ hexo init myproject
+</code></pre><p>myproject目录就是你的站点根目录</p>
+<h2 id="本地调试-运行hexo"><a href="#本地调试-运行hexo" class="headerlink" title="本地调试-运行hexo"></a>本地调试-运行hexo</h2><pre><code>$ cd myproject
+
+$ npm install
+
+$ hexo s -g  
+</code></pre><p>可以在  <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>  查看<br>停止运行 按住Ctrl+C键即可停止<br><img src="http://op28wafvd.bkt.clouddn.com/hexo1.png" alt="此处输入图片的描述"></p>
+<h2 id="管理博客"><a href="#管理博客" class="headerlink" title="管理博客"></a>管理博客</h2><h4 id="打开myproject-config-yml文件，进行配置"><a href="#打开myproject-config-yml文件，进行配置" class="headerlink" title="打开myproject/_config.yml文件，进行配置"></a>打开myproject/_config.yml文件，进行配置</h4><blockquote>
+<p>  博客名称<br>    title: 我的博客<br>    副标题<br>    subtitle: 一天进步一点<br>    简介<br>    description: 记录生活点滴<br>    博客作者<br>    author: adai<br>    博客语言<br>    language: zh-CN<br>    博客地址,与申请的GitHub一致<br>    url: <a href="http://wangadai.github.io">http://wangadai.github.io</a><br>    root: /<br>    博客链接格式<br>    permalink: :year/:month/:day/:title/<br>    permalink_defaults:<br>    日期格式<br>    date_format: YYYY-MM-DD<br>    time_format: HH:mm:ss<br>    分页，每页文章数量<br>    per_page: 10<br>    pagination_dir: page<br>    博客主题<br>    theme: next<br>    发布设置<br>    deploy:<br>      type: git</p>
+<pre><code>#wangadai改为你的github用户名
+repository: https://github.com/wangadai/wangadai.github.io.git
+branch: master
+</code></pre></blockquote>
+<h4 id="写一篇文章"><a href="#写一篇文章" class="headerlink" title="写一篇文章"></a>写一篇文章</h4><pre><code>$ hexo new &quot;hello&quot;
+</code></pre><p>用编辑器打开hello.md文件,编写完后保存</p>
+<blockquote>
+<p>  title: hello<br>    date: 2017-04-29<br>    categories:</p>
+<pre><code>    - 日志
+    - 二级目录
+tags:
+    - hello
+---
+摘要:
+&lt;!--more--&gt;   
+正文:
+</code></pre></blockquote>
+<pre><code>以上是发表文章的步骤，执行hexo new 之后会在站点目录的source/_posts/目录下生成.md结尾的博客，我用的Cmd Mardown来写博客的。
+</code></pre><h4 id="创建一个标签页"><a href="#创建一个标签页" class="headerlink" title="创建一个标签页"></a>创建一个标签页</h4><pre><code>$ hexo new page about
+即可在source文件夹下生成about/index.md
+</code></pre><blockquote>
+<p>  title: about<br>    date: 2017-04-27 16:18:11<br>    comments: false</p>
+<p>  关于我</p>
+<p>毕业于电专，就职于蚁国</p>
+<p>目前是一枚小前端</p>
+<p>QQ：535605871 Email: 535605871@qq.com</p>
+</blockquote>
+<h4 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h4><blockquote>
+<p>我使用的是<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">NexT</a>主题，目前github星星数最多的一个主题，主题界面一般，主要是文档齐全吧，所以很受人们欢迎，我也建议新手使用该主题，主题配置参考<a href="http://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="external">NexT官方文档</a>。</p>
+</blockquote>
+<h4 id="发布博客"><a href="#发布博客" class="headerlink" title="发布博客"></a>发布博客</h4><ul>
+<li><p>设置git身份信息</p>
+<pre><code>$ git config --global user.name &quot;你的用户名&quot;
+</code></pre><p>$ git config –global user.email “你的邮箱”</p>
+</li>
+<li><p>安装hexo git插件</p>
+<pre><code>$ cnpm install hexo-deployer-git --save
+</code></pre></li>
+<li><p>发布更新博客</p>
+<pre><code>$ hexo d -g
+</code></pre><p>发布成功后，访问yourname.github.io看下成果</p>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[JavaScript事件初识]]></title>
       <url>/2017/04/28/JavaScript%E4%BA%8B%E4%BB%B6%E5%88%9D%E8%AF%86/</url>
       <content type="html"><![CDATA[<blockquote>
@@ -341,84 +415,10 @@ for (var i = 0; i &lt; aLi.length; i++) {
     </entry>
     
     <entry>
-      <title><![CDATA[Hexo + Github Pages搭建个人独立博客]]></title>
-      <url>/2017/04/28/Hexo%20+%20Github/</url>
-      <content type="html"><![CDATA[<h2 id="系统环境配置"><a href="#系统环境配置" class="headerlink" title="系统环境配置"></a>系统环境配置</h2><ol>
-<li>安装Node.js  <a href="http://nodejs.cn/download/" target="_blank" rel="external">下载Node.js</a>    <a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="external">安装Node.js</a></li>
-<li>安装Git  <a href="https://git-scm.com/download/" target="_blank" rel="external">下载地址</a></li>
-</ol>
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>大家估计都有被“墙”的经历，安装hexo为了避免出现类似情况，我使用淘宝NPM镜像,输入以下命令等待安装完成</p>
-<pre><code>$ npm install -g cnpm --registry=https://registry.npm.taobao.org
-</code></pre><p>使用淘宝NPM安装Hexo</p>
-<pre><code>$ cnpm install -g hexo-cli
-</code></pre><p>成功以后继续输入以下命令</p>
-<pre><code>$ cnpm install hexo --save
-</code></pre><p>安装完成后，在输入命令，验证是否安装正确</p>
-<pre><code>$ hexo -v
-</code></pre><p><img src="http://op28wafvd.bkt.clouddn.com/hexov.png" alt="此处输入图片的描述"></p>
-<h2 id="申请GitHub"><a href="#申请GitHub" class="headerlink" title="申请GitHub"></a>申请GitHub</h2><ul>
-<li><a href="https://github.com/" target="_blank" rel="external">点击注册GitHub</a></li>
-<li><p>按下图分别输入用户名、邮箱、密码，然后点击注册 <img src="http://op28wafvd.bkt.clouddn.com/hexo2.png" alt="此处输入图片的描述"></p>
-</li>
-<li><p>点击”New repository”，新建一个版本库 <img src="http://op28wafvd.bkt.clouddn.com/hexo3.png" alt="此处输入图片的描述"></p>
-</li>
-<li><p>输入Repository name:yourname.github.io(yourname与你的注册用户名一致,这个就是你博客的域名了) <img src="http://op28wafvd.bkt.clouddn.com/hexo4.png" alt="此处输入图片的描述"></p>
-</li>
-</ul>
-<p>到此github帐号申请完成</p>
-<h2 id="建立站点"><a href="#建立站点" class="headerlink" title="建立站点"></a>建立站点</h2><pre><code>$ hexo init myproject
-</code></pre><p>myproject目录就是你的站点根目录</p>
-<h2 id="本地调试-运行hexo"><a href="#本地调试-运行hexo" class="headerlink" title="本地调试-运行hexo"></a>本地调试-运行hexo</h2><pre><code>$ cd myproject
-
-$ npm install
-
-$ hexo s -g  
-</code></pre><p>可以在  <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>  查看<br>停止运行 按住Ctrl+C键即可停止<br><img src="http://op28wafvd.bkt.clouddn.com/hexo1.png" alt="此处输入图片的描述"></p>
-<h2 id="管理博客"><a href="#管理博客" class="headerlink" title="管理博客"></a>管理博客</h2><h4 id="打开myproject-config-yml文件，进行配置"><a href="#打开myproject-config-yml文件，进行配置" class="headerlink" title="打开myproject/_config.yml文件，进行配置"></a>打开myproject/_config.yml文件，进行配置</h4><blockquote>
-<p>  博客名称<br>    title: 我的博客<br>    副标题<br>    subtitle: 一天进步一点<br>    简介<br>    description: 记录生活点滴<br>    博客作者<br>    author: adai<br>    博客语言<br>    language: zh-CN<br>    博客地址,与申请的GitHub一致<br>    url: <a href="http://wangadai.github.io">http://wangadai.github.io</a><br>    root: /<br>    博客链接格式<br>    permalink: :year/:month/:day/:title/<br>    permalink_defaults:<br>    日期格式<br>    date_format: YYYY-MM-DD<br>    time_format: HH:mm:ss<br>    分页，每页文章数量<br>    per_page: 10<br>    pagination_dir: page<br>    博客主题<br>    theme: next<br>    发布设置<br>    deploy:<br>      type: git</p>
-<pre><code>#wangadai改为你的github用户名
-repository: https://github.com/wangadai/wangadai.github.io.git
-branch: master
-</code></pre></blockquote>
-<h4 id="写一篇文章"><a href="#写一篇文章" class="headerlink" title="写一篇文章"></a>写一篇文章</h4><pre><code>$ hexo new &quot;hello&quot;
-</code></pre><p>用编辑器打开hello.md文件,编写完后保存</p>
-<blockquote>
-<p>  title: hello<br>    date: 2017-04-29<br>    categories:</p>
-<pre><code>    - 日志
-    - 二级目录
-tags:
-    - hello
----
-摘要:
-&lt;!--more--&gt;   
-正文:
-</code></pre></blockquote>
-<pre><code>以上是发表文章的步骤，执行hexo new 之后会在站点目录的source/_posts/目录下生成.md结尾的博客，我用的Cmd Mardown来写博客的。
-</code></pre><h4 id="创建一个标签页"><a href="#创建一个标签页" class="headerlink" title="创建一个标签页"></a>创建一个标签页</h4><pre><code>$ hexo new page about
-即可在source文件夹下生成about/index.md
-</code></pre><blockquote>
-<p>  title: about<br>    date: 2017-04-27 16:18:11<br>    comments: false</p>
-<p>  关于我</p>
-<p>毕业于电专，就职于蚁国</p>
-<p>目前是一枚小前端</p>
-<p>QQ：535605871 Email: 535605871@qq.com</p>
-</blockquote>
-<h4 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h4><blockquote>
-<p>我使用的是<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">NexT</a>主题，目前github星星数最多的一个主题，主题界面一般，主要是文档齐全吧，所以很受人们欢迎，我也建议新手使用该主题，主题配置参考<a href="http://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="external">NexT官方文档</a>。</p>
-</blockquote>
-<h4 id="发布博客"><a href="#发布博客" class="headerlink" title="发布博客"></a>发布博客</h4><ul>
-<li><p>设置git身份信息</p>
-<pre><code>$ git config --global user.name &quot;你的用户名&quot;
-</code></pre><p>$ git config –global user.email “你的邮箱”</p>
-</li>
-<li><p>安装hexo git插件</p>
-<pre><code>$ cnpm install hexo-deployer-git --save
-</code></pre></li>
-<li><p>发布更新博客</p>
-<pre><code>$ hexo d -g
-</code></pre><p>发布成功后，访问yourname.github.io看下成果</p>
-</li>
-</ul>
+      <title><![CDATA[Hexo博客添加Fork me on GitHub]]></title>
+      <url>/2017/04/28/forme/</url>
+      <content type="html"><![CDATA[<p>1 . 去网址<a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="external">https://github.com/blog/273-github-ribbons</a> 挑选自己喜欢的样式，并复制代码。<br>2 . 修改主题文件。以我用的next主题为例,粘贴刚才复制的代码到 themes/next/layout/_layout.swig文件中，修改后的的文件内容如下 <img src="http://op28wafvd.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170429150201.png" alt="此处输入图片的描述"></p>
+<p>3 . 再把其中的链接地址改为你的github地址。如上图修改红框中地址。</p>
 ]]></content>
       
         <categories>
