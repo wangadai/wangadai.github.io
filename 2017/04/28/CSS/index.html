@@ -65,17 +65,17 @@
 
 
 
-<meta name="description" content="1、绝对定位居中（子元素需设置宽高）内容块的父容器：position:relative;子元素：position: absolute;top: 0;left: 0;bottom: 0;right: 0;margin:auto; （必须设置高度）  原理：元素在过度受限情况下，将margin设置为auto，浏览器会重算margin的值，过度受限指的是同时设置top/bottom与height或者le">
+<meta name="description" content="1、绝对定位居中 子元素需设置宽高内容块的父容器：position:relative;子元素：position: absolute;top: 0;left: 0;bottom: 0;right: 0;margin:auto; （必须设置高度） 原理：元素在过度受限情况下，将margin设置为auto，浏览器会重算margin的值，过度受限指的是同时设置top/bottom与height或者left">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS实现垂直居中水平居中的绝对定位居中技术">
+<meta property="og:title" content="CSS居中技术">
 <meta property="og:url" content="http://wangadai.github.io/2017/04/28/CSS/index.html">
 <meta property="og:site_name" content="阿呆">
-<meta property="og:description" content="1、绝对定位居中（子元素需设置宽高）内容块的父容器：position:relative;子元素：position: absolute;top: 0;left: 0;bottom: 0;right: 0;margin:auto; （必须设置高度）  原理：元素在过度受限情况下，将margin设置为auto，浏览器会重算margin的值，过度受限指的是同时设置top/bottom与height或者le">
-<meta property="og:updated_time" content="2017-04-29T08:03:10.579Z">
+<meta property="og:description" content="1、绝对定位居中 子元素需设置宽高内容块的父容器：position:relative;子元素：position: absolute;top: 0;left: 0;bottom: 0;right: 0;margin:auto; （必须设置高度） 原理：元素在过度受限情况下，将margin设置为auto，浏览器会重算margin的值，过度受限指的是同时设置top/bottom与height或者left">
+<meta property="og:updated_time" content="2017-05-02T06:52:27.159Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS实现垂直居中水平居中的绝对定位居中技术">
-<meta name="twitter:description" content="1、绝对定位居中（子元素需设置宽高）内容块的父容器：position:relative;子元素：position: absolute;top: 0;left: 0;bottom: 0;right: 0;margin:auto; （必须设置高度）  原理：元素在过度受限情况下，将margin设置为auto，浏览器会重算margin的值，过度受限指的是同时设置top/bottom与height或者le">
+<meta name="twitter:title" content="CSS居中技术">
+<meta name="twitter:description" content="1、绝对定位居中 子元素需设置宽高内容块的父容器：position:relative;子元素：position: absolute;top: 0;left: 0;bottom: 0;right: 0;margin:auto; （必须设置高度） 原理：元素在过度受限情况下，将margin设置为auto，浏览器会重算margin的值，过度受限指的是同时设置top/bottom与height或者left">
 
 
 
@@ -109,7 +109,7 @@
 
 
 
-  <title> CSS实现垂直居中水平居中的绝对定位居中技术 | 阿呆 </title>
+  <title> CSS居中技术 | 阿呆 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -305,7 +305,7 @@
             
             
               
-                CSS实现垂直居中水平居中的绝对定位居中技术
+                CSS居中技术
               
             
           </h1>
@@ -367,6 +367,40 @@
           
 
           
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <!-- <span class="post-meta-item-text">字数统计</span> -->
+                  <span class="post-meta-item-text">字数统计：</span>
+                  <span class="post-count">963（字）</span>
+                
+                <span title="字数统计">
+                  <!-- 963 -->
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <!-- <span class="post-meta-item-text">阅读时长</span> -->
+                  <span class="post-meta-item-text">阅读时长：</span>
+                  <span class="post-count">5（分）</span>
+                
+                <span title="阅读时长">
+                  <!-- 5 -->
+                </span>
+              
+            </div>
+          
 
           
 
@@ -381,11 +415,12 @@
       
 
       
-        <h3 id="1、绝对定位居中（子元素需设置宽高）"><a href="#1、绝对定位居中（子元素需设置宽高）" class="headerlink" title="1、绝对定位居中（子元素需设置宽高）"></a>1、绝对定位居中（子元素需设置宽高）</h3><p>内容块的父容器：position:relative;<br>子元素：position: absolute;top: 0;left: 0;bottom: 0;right: 0;margin:auto; （必须设置高度）</p>
-<blockquote>
+        <h3 id="1、绝对定位居中"><a href="#1、绝对定位居中" class="headerlink" title="1、绝对定位居中"></a>1、绝对定位居中</h3><blockquote>
+<p>子元素需设置宽高内容块的父容器：position:relative;<br>子元素：position: absolute;top: 0;left: 0;bottom: 0;right: 0;margin:auto; （必须设置高度）</p>
 <p>原理：元素在过度受限情况下，将margin设置为auto，浏览器会重算margin的值，过度受限指的是同时设置top/bottom与height或者left/right与width。</p>
 </blockquote>
-<h3 id="2、绝对定位配合margin（子元素需设置宽高）"><a href="#2、绝对定位配合margin（子元素需设置宽高）" class="headerlink" title="2、绝对定位配合margin（子元素需设置宽高）"></a>2、绝对定位配合margin（子元素需设置宽高）</h3><blockquote>
+<h3 id="2、绝对定位配合margin"><a href="#2、绝对定位配合margin" class="headerlink" title="2、绝对定位配合margin"></a>2、绝对定位配合margin</h3><blockquote>
+<p>子元素需设置宽高</p>
 <p>原理：top：50%元素上边界位于包含框中点，设置负外边界使得元素垂直中心与包含框中心重合；</p>
 </blockquote>
 <p>第一种</p>
@@ -430,8 +465,8 @@
 &lt;div class=&quot;one&quot;&gt;
     &lt;div class=&quot;two&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
-</code></pre><h3 id="3、table-cell方式（子元素不需设置宽高）"><a href="#3、table-cell方式（子元素不需设置宽高）" class="headerlink" title="3、table-cell方式（子元素不需设置宽高）"></a>3、table-cell方式（子元素不需设置宽高）</h3><p>父容器：display:table-cell;text-align:center;vertical-align:middle;（设置宽高）<br>子元素：display:inline-block;vertical-align:middle;</p>
-<blockquote>
+</code></pre><h3 id="3、table-cell方式"><a href="#3、table-cell方式" class="headerlink" title="3、table-cell方式"></a>3、table-cell方式</h3><blockquote>
+<p>子元素不需设置宽高<br>父容器：display:table-cell;text-align:center;vertical-align:middle;（设置宽高）<br>子元素：display:inline-block;vertical-align:middle;</p>
 <p>原理：利用表格布局的特点，vertical-align设置为middle;单元格中的内容与所在行中间对齐</p>
 </blockquote>
 <pre><code>&lt;style&gt;
@@ -449,9 +484,8 @@
 &lt;div class=&quot;one&quot;&gt;
     &lt;div class=&quot;two&quot;&gt;11111111111&lt;/div&gt;
 &lt;/div&gt;
-</code></pre><h3 id="4、通过添加空span标签使图片居中（子元素需设置宽高）"><a href="#4、通过添加空span标签使图片居中（子元素需设置宽高）" class="headerlink" title="4、通过添加空span标签使图片居中（子元素需设置宽高）"></a>4、通过添加空span标签使图片居中（子元素需设置宽高）</h3><p>父容器：text-align: center;</p>
-<blockquote>
-<p><code>&lt;span&gt;</code><br>display: inline-block;   将行内元素改变为行内块元素显示<br>width: 1px;              实现ＩＥ下可读效果<br>height: 100%;            使用元素高度和图片容器高度一样<br>vertical-align: middle;  垂直对齐<br>图片：vertical-align: middle;   </p>
+</code></pre><h3 id="4、通过添加空span标签使图片居中"><a href="#4、通过添加空span标签使图片居中" class="headerlink" title="4、通过添加空span标签使图片居中"></a>4、通过添加空span标签使图片居中</h3><blockquote>
+<p>子元素需设置宽高<br>父容器：text-align: center;<br><code>&lt;span&gt;</code><br>display: inline-block;   将行内元素改变为行内块元素显示<br>width: 1px;              实现ＩＥ下可读效果<br>height: 100%;            使用元素高度和图片容器高度一样<br>vertical-align: middle;  垂直对齐<br>图片：vertical-align: middle;   </p>
 </blockquote>
 <pre><code>&lt;style&gt;
     .one{
@@ -470,8 +504,34 @@
     &lt;span&gt;&lt;/span&gt;
     &lt;img src=&quot;../img/jian.png&quot; alt=&quot;&quot;&gt;
 &lt;/div&gt;
-</code></pre><h3 id="5、外边距margin取负数，大小为width-height（不使用box-sizing-border-box时包括padding，）的一半，再加上top-50-left-50-。"><a href="#5、外边距margin取负数，大小为width-height（不使用box-sizing-border-box时包括padding，）的一半，再加上top-50-left-50-。" class="headerlink" title="5、外边距margin取负数，大小为width/height（不使用box-sizing: border-box时包括padding，）的一半，再加上top: 50%; left: 50%;。"></a>5、外边距margin取负数，大小为width/height（不使用box-sizing: border-box时包括padding，）的一半，再加上top: 50%; left: 50%;。</h3><p>（子元素需设置宽高）<br>    <style><br>        .one{<br>            border: 1px solid red;<br>            width: 200px;height: 200px;<br>            position: relative;<br>        }<br>        .two{<br>            background: red;<br>            width: 30px;<br>            height: 20px;<br>            padding: 20px;<br>            position: absolute;<br>            top: 50%; left: 50%;<br>            margin-left: -35px; /<em> (width + padding)/2 </em>/<br>            margin-top: -30px; /<em> (height + padding)/2 </em>/<br>        }<br>    </style><br>    <div class="one"><br>        <span></span><br>        <div class="two"></div><br>    </div> </p>
-<h3 id="6、内容定义transform-translate-50-50-并且加上top：50-；left：50-。（子元素需设置宽高）"><a href="#6、内容定义transform-translate-50-50-并且加上top：50-；left：50-。（子元素需设置宽高）" class="headerlink" title="6、内容定义transform:translate(-50%,-50%),并且加上top：50%；left：50%。（子元素需设置宽高）"></a>6、内容定义transform:translate(-50%,-50%),并且加上top：50%；left：50%。（子元素需设置宽高）</h3><pre><code>&lt;style&gt;
+</code></pre><h3 id="5、margin"><a href="#5、margin" class="headerlink" title="5、margin"></a>5、margin</h3><blockquote>
+<p>外边距margin取负数，大小为width/height（不使用box-sizing: border-box时包括padding，）的一半，再加上top: 50%; left: 50%;。<br>子元素需设置宽高</p>
+</blockquote>
+<pre><code>&lt;style&gt;
+    .one{
+        border: 1px solid red;
+        width: 200px;height: 200px;
+        position: relative;
+    }
+    .two{
+        background: red;
+        width: 30px;
+        height: 20px;
+        padding: 20px;
+        position: absolute;
+        top: 50%; left: 50%;
+        margin-left: -35px; /* (width + padding)/2 */
+        margin-top: -30px; /* (height + padding)/2 */
+    }
+&lt;/style&gt;
+&lt;div class=&quot;one&quot;&gt;
+    &lt;span&gt;&lt;/span&gt;
+    &lt;div class=&quot;two&quot;&gt;&lt;/div&gt;
+&lt;/div&gt; 
+</code></pre><h3 id="6、transform"><a href="#6、transform" class="headerlink" title="6、transform"></a>6、transform</h3><blockquote>
+<p>内容定义transform:translate(-50%,-50%),并且加上top：50%；left：50%。<br>子元素需设置宽高</p>
+</blockquote>
+<pre><code>&lt;style&gt;
     .one{
         border: 1px solid red;
         width: 200px;height: 200px;
@@ -493,9 +553,10 @@
     &lt;span&gt;&lt;/span&gt;
     &lt;div class=&quot;two&quot;&gt;&lt;/div&gt;
 &lt;/div&gt; 
-</code></pre><h3 id="7、增加额外子元素设置margin-bottom为内容元素的高度-padding的一半。（不能实现水平垂直居中，仅垂直居中）"><a href="#7、增加额外子元素设置margin-bottom为内容元素的高度-padding的一半。（不能实现水平垂直居中，仅垂直居中）" class="headerlink" title="7、增加额外子元素设置margin-bottom为内容元素的高度+padding的一半。（不能实现水平垂直居中，仅垂直居中）"></a>7、增加额外子元素设置margin-bottom为内容元素的高度+padding的一半。（不能实现水平垂直居中，仅垂直居中）</h3><blockquote>
-<p>原理与2方法类似，floater的下边界是包含框的中心线，负下外边界保证center的中心线与包含框中心线重合</p>
+</code></pre><h3 id="7、增加额外子元素设置margin-bottom为内容元素的高度-padding的一半。"><a href="#7、增加额外子元素设置margin-bottom为内容元素的高度-padding的一半。" class="headerlink" title="7、增加额外子元素设置margin-bottom为内容元素的高度+padding的一半。"></a>7、增加额外子元素设置margin-bottom为内容元素的高度+padding的一半。</h3><blockquote>
+<p>不能实现水平垂直居中，仅垂直居中</p>
 </blockquote>
+<p>原理与2方法类似，floater的下边界是包含框的中心线，负下外边界保证center的中心线与包含框中心线重合</p>
 <pre><code>&lt;style&gt;
     .one{
         border: 1px solid red;
@@ -517,9 +578,10 @@
     &lt;div class=&quot;floater&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;two&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
-</code></pre><h3 id="8、inline-block方式（子元素不需设置宽高）"><a href="#8、inline-block方式（子元素不需设置宽高）" class="headerlink" title="8、inline-block方式（子元素不需设置宽高）"></a>8、inline-block方式（子元素不需设置宽高）</h3><blockquote>
-<p>原理：为同一行的inline-block元素设置vertical-align：middle，该行内的inline-block元素会按照元素的垂直中心线对齐。</p>
+</code></pre><h3 id="8、inline-block"><a href="#8、inline-block" class="headerlink" title="8、inline-block"></a>8、inline-block</h3><blockquote>
+<p>子元素不需设置宽高</p>
 </blockquote>
+<p>原理：为同一行的inline-block元素设置vertical-align：middle，该行内的inline-block元素会按照元素的垂直中心线对齐。</p>
 <pre><code>&lt;style&gt;
     .one{
         border: 1px solid red;
@@ -541,7 +603,9 @@
 &lt;div class=&quot;one&quot;&gt;
     &lt;div class=&quot;two&quot;&gt;11111111111111111111&lt;/div&gt;
 &lt;/div&gt;
-</code></pre><h3 id="9、弹性盒式布局（子元素不需设置宽高）"><a href="#9、弹性盒式布局（子元素不需设置宽高）" class="headerlink" title="9、弹性盒式布局（子元素不需设置宽高）"></a>9、弹性盒式布局（子元素不需设置宽高）</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes#.E5.BC.B9.E6.80.A7.E7.9B.92.E6.A6.82.E5.BF.B5" target="_blank" rel="external">CSS弹性盒</a></p>
+</code></pre><h3 id="9、弹性盒式布局"><a href="#9、弹性盒式布局" class="headerlink" title="9、弹性盒式布局"></a>9、弹性盒式布局</h3><blockquote>
+<p>子元素不需设置宽高<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes#.E5.BC.B9.E6.80.A7.E7.9B.92.E6.A6.82.E5.BF.B5" target="_blank" rel="external">CSS弹性盒</a></p>
+</blockquote>
 <pre><code>&lt;style&gt;
    (1) .one{
            border: 1px solid red;
@@ -789,7 +853,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、绝对定位居中（子元素需设置宽高）"><span class="nav-number">1.</span> <span class="nav-text">1、绝对定位居中（子元素需设置宽高）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、绝对定位配合margin（子元素需设置宽高）"><span class="nav-number">2.</span> <span class="nav-text">2、绝对定位配合margin（子元素需设置宽高）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、table-cell方式（子元素不需设置宽高）"><span class="nav-number">3.</span> <span class="nav-text">3、table-cell方式（子元素不需设置宽高）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、通过添加空span标签使图片居中（子元素需设置宽高）"><span class="nav-number">4.</span> <span class="nav-text">4、通过添加空span标签使图片居中（子元素需设置宽高）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、外边距margin取负数，大小为width-height（不使用box-sizing-border-box时包括padding，）的一半，再加上top-50-left-50-。"><span class="nav-number">5.</span> <span class="nav-text">5、外边距margin取负数，大小为width/height（不使用box-sizing: border-box时包括padding，）的一半，再加上top: 50%; left: 50%;。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、内容定义transform-translate-50-50-并且加上top：50-；left：50-。（子元素需设置宽高）"><span class="nav-number">6.</span> <span class="nav-text">6、内容定义transform:translate(-50%,-50%),并且加上top：50%；left：50%。（子元素需设置宽高）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、增加额外子元素设置margin-bottom为内容元素的高度-padding的一半。（不能实现水平垂直居中，仅垂直居中）"><span class="nav-number">7.</span> <span class="nav-text">7、增加额外子元素设置margin-bottom为内容元素的高度+padding的一半。（不能实现水平垂直居中，仅垂直居中）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、inline-block方式（子元素不需设置宽高）"><span class="nav-number">8.</span> <span class="nav-text">8、inline-block方式（子元素不需设置宽高）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、弹性盒式布局（子元素不需设置宽高）"><span class="nav-number">9.</span> <span class="nav-text">9、弹性盒式布局（子元素不需设置宽高）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、绝对定位居中"><span class="nav-number">1.</span> <span class="nav-text">1、绝对定位居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、绝对定位配合margin"><span class="nav-number">2.</span> <span class="nav-text">2、绝对定位配合margin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、table-cell方式"><span class="nav-number">3.</span> <span class="nav-text">3、table-cell方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、通过添加空span标签使图片居中"><span class="nav-number">4.</span> <span class="nav-text">4、通过添加空span标签使图片居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、margin"><span class="nav-number">5.</span> <span class="nav-text">5、margin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、transform"><span class="nav-number">6.</span> <span class="nav-text">6、transform</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、增加额外子元素设置margin-bottom为内容元素的高度-padding的一半。"><span class="nav-number">7.</span> <span class="nav-text">7、增加额外子元素设置margin-bottom为内容元素的高度+padding的一半。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、inline-block"><span class="nav-number">8.</span> <span class="nav-text">8、inline-block</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、弹性盒式布局"><span class="nav-number">9.</span> <span class="nav-text">9、弹性盒式布局</span></a></li></ol></div>
             
 
           </div>
