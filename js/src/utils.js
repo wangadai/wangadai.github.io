@@ -64,11 +64,13 @@ NexT.utils = NexT.$u = {
       $top.toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
 
       var scrollTop = $(window).scrollTop();
-      var docHeight = $(document).height();
+      var docHeight = $('#content').height();
       var winHeight = $(window).height();
-      var scrollPercent = (scrollTop) / (docHeight - winHeight);
+      var contentMath = (docHeight > winHeight) ? (docHeight - winHeight) : ($(document).height() - winHeight);
+      var scrollPercent = (scrollTop) / (contentMath);
       var scrollPercentRounded = Math.round(scrollPercent*100);
-      $('#scrollpercent>span').html(scrollPercentRounded);
+      var scrollPercentMaxed = (scrollPercentRounded > 100) ? 100 : scrollPercentRounded;
+      $('#scrollpercent>span').html(scrollPercentMaxed);
     });
 
     $top.on('click', function () {
@@ -120,8 +122,7 @@ NexT.utils = NexT.$u = {
         wrap.className = 'fluid-vids';
         wrap.style.position = 'relative';
         wrap.style.marginBottom = '20px';
-        wrap.style.width = '351px';
-        wrap.style.left = '-112px';
+        wrap.style.width = '100%';
         wrap.style.paddingTop = videoRatio + '%';
 
         // Add the iframe inside our newly created <div>
