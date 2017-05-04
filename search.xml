@@ -398,22 +398,6 @@ tags:
     </entry>
     
     <entry>
-      <title><![CDATA[Hexo博客添加Fork me on GitHub]]></title>
-      <url>/2017/04/28/forme/</url>
-      <content type="html"><![CDATA[<p>1 . 去网址<a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="external">https://github.com/blog/273-github-ribbons</a> 挑选自己喜欢的样式，并复制代码。<br>2 . 修改主题文件。以我用的next主题为例,粘贴刚才复制的代码到 themes/next/layout/_layout.swig文件中，修改后的的文件内容如下 <img src="http://op28wafvd.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170429150201.png" alt="此处输入图片的描述"></p>
-<p>3 . 再把其中的链接地址改为你的github地址。如上图修改红框中地址。</p>
-]]></content>
-      
-        <categories>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[JavaScript事件初识]]></title>
       <url>/2017/04/28/JavaScript%E4%BA%8B%E4%BB%B6%E5%88%9D%E8%AF%86/</url>
       <content type="html"><![CDATA[<blockquote>
@@ -530,6 +514,22 @@ for (var i = 0; i &lt; aLi.length; i++) {
         <categories>
             
             <category> JS </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo博客添加Fork me on GitHub]]></title>
+      <url>/2017/04/28/forme/</url>
+      <content type="html"><![CDATA[<p>1 . 去网址<a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="external">https://github.com/blog/273-github-ribbons</a> 挑选自己喜欢的样式，并复制代码。<br>2 . 修改主题文件。以我用的next主题为例,粘贴刚才复制的代码到 themes/next/layout/_layout.swig文件中，修改后的的文件内容如下 <img src="http://op28wafvd.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170429150201.png" alt="此处输入图片的描述"></p>
+<p>3 . 再把其中的链接地址改为你的github地址。如上图修改红框中地址。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
             
         </categories>
         
