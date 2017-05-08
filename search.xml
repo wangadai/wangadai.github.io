@@ -65,8 +65,6 @@ var a3 = new Array(x1);                                             //如果x1�
 for(var i=0;i&lt;arr.length,i++){}
 优化：for(var i=0,len=arr.length;i&lt;len,i++){}
 </code></pre><p>##九、重复的dom操作<br>    重复的dom操作，使用一个变量来进行接收很有必要，而不是频繁的去操作dom树，这对性能与代码的整洁及易维护性带来不好的影响<br>    在jquery .end()可使用的情况下应该优先使用.end()</p>
-<p>##<strong>插件的一些技巧</strong></p>
-<p>##一、Avalon<br>    一般情况下，我们在使用ms-controller绑定时，需要添加一个ms-controller类名，设置为visibility：hidden;目的是为了防止网速慢时将花括号暴露出来。</p>
 ]]></content>
       
         <categories>
