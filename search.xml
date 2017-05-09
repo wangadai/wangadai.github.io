@@ -3,6 +3,87 @@
   
     
     <entry>
+      <title><![CDATA[Vue全选功能]]></title>
+      <url>/2017/05/09/Vue%E5%85%A8%E9%80%89%E5%8A%9F%E8%83%BD/</url>
+      <content type="html"><![CDATA[<p>HTML代码</p>
+<pre><code>&lt;div id=&apos;checked&apos;&gt;
+    &lt;div&gt;当前的选择的名字：{{checkedName}}&lt;/div&gt;
+    &lt;div&gt;当前的选择的个数：{{checkedCount}}&lt;/div&gt;
+    &lt;input type=&apos;checkbox&apos; id=&apos;allcheck&apos; v-model=&apos;allChecked&apos;&gt;
+    &lt;label for=&quot;allcheck&quot;&gt;全选&lt;/label&gt;
+    &lt;div v-for=&quot;item in checkboxData&quot;&gt;
+        &lt;input type=&quot;checkbox&quot; :value=&quot;item.id&quot; :id=&quot;&apos;check&apos; + item.id&quot; v-model=&quot;item.checked&quot;&gt;
+        &lt;label :for=&quot;&apos;check&apos; + item.id&quot;&gt;{{item.value}}&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>JS代码</p>
+<pre><code>new Vue({
+    el: &quot;#checked&quot;,
+    data: {
+        checkboxData: [{
+            id: 1,
+            value: &apos;苹果&apos;,
+            checked: false,
+        }, {
+            id: 2,
+            value: &apos;桃&apos;,
+            checked: false,
+        }, {
+            id: 3,
+            value: &apos;梨&apos;,
+            checked: false,
+        }, {
+            id: 4,
+            value: &apos;柿子&apos;,
+            checked: false,
+        }],
+    },
+    computed: {
+        allChecked: {
+            get: function(){
+                return this.checkedCount == this.checkboxData.length ? true : false;
+            },
+            set: function(value){
+                this.checkboxData.forEach((item) =&gt;{
+                    item.checked = value
+                })
+                    return value;
+            }
+    },
+        checkedCount: {
+            get: function() {
+                var i = 0;
+                this.checkboxData.forEach((item) =&gt; {
+                    if (item.checked) i++;
+                })
+                    return i;
+            }
+        },
+        checkedName: {
+            get: function() {
+                var name = [];
+                this.checkboxData.forEach((item) =&gt; {
+                    if (item.checked) name.push(item.value);
+                })
+                return name;
+            }
+        }    
+    },
+});
+</code></pre><p><img src="http://op28wafvd.bkt.clouddn.com/vue.gif" alt="此处输入图片的描述"></p>
+<p><a href="http://runjs.cn/code/gojslhgy" target="_blank" rel="external">代码演示</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Vue </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[JS小技巧]]></title>
       <url>/2017/05/04/JS%E5%B0%8F%E6%8A%80%E5%B7%A7/</url>
       <content type="html"><![CDATA[<h2 id="一、金钱格式转换"><a href="#一、金钱格式转换" class="headerlink" title="一、金钱格式转换"></a>一、金钱格式转换</h2><p>  1.英文钱格式转换<br>    $(“#id”).text().replace(/,/g,””);<br>  2.中文钱格式转换</p>
