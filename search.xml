@@ -3,6 +3,58 @@
   
     
     <entry>
+      <title><![CDATA[GIT的常用命令]]></title>
+      <url>/2017/05/22/GIT%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<h2 id="git-reset-revert-回退回滚取消提交返回上一版本"><a href="#git-reset-revert-回退回滚取消提交返回上一版本" class="headerlink" title="git reset revert 回退回滚取消提交返回上一版本"></a>git reset revert 回退回滚取消提交返回上一版本</h2><p><strong>没有push</strong></p>
+<blockquote>
+<p>这种情况发生在你的本地代码仓库,可能你add ,commit 以后发现代码有点问题,准备取消提交,用到下面命令</p>
+</blockquote>
+<pre><code>git reset [--soft | --mixed | --hard
+</code></pre><blockquote>
+<p><code>--mixed</code> 会保留源码,只是将git commit和index 信息回退到了某个版本.</p>
+</blockquote>
+<pre><code>git reset 默认是 --mixed 模式 
+git reset --mixed  等价于  git reset
+</code></pre><blockquote>
+<p><code>--soft</code> 保留源码,只回退到commit 信息到某个版本.不涉及index的回退,如果还需要提交,直接commit即可.</p>
+<p><code>--hard</code> 源码也会回退到某个版本,commit和index 都回回退到某个版本.(注意,这种方式是改变本地代码仓库源码) </p>
+</blockquote>
+<p><strong>已经push</strong></p>
+<blockquote>
+<p>对于已经把代码push到线上仓库,你回退本地代码其实也想同时回退线上代码,回滚到某个指定的版本,线上,线下代码保持一致.你要用到下面的命令<code>revert</code><br>git revert用于反转提交,执行evert命令时要求工作树必须是干净的.<br>git revert用一个新提交来消除一个历史提交所做的任何修改.<br>revert 之后你的本地代码会回滚到指定的历史版本,这时你再 git push 既可以把线上的代码更新.(这里不会像reset造成冲突的问题)</p>
+</blockquote>
+<p>revert 使用,需要先找到你想回滚版本唯一的commit标识代码,可以用 git log 或者在adgit搭建的web环境历史提交记录里查看.</p>
+<pre><code>git revert c011eb3c20ba6fb38cc94fe5a8dda366a3990c61
+</code></pre><blockquote>
+<p>通常,前几位即可</p>
+</blockquote>
+<pre><code>git revert c011eb3
+</code></pre><p>git revert是用一次新的commit来回滚之前的commit，git reset是直接删除指定的commit</p>
+<p>看似达到的效果是一样的,其实完全不同.</p>
+<p>第一:</p>
+<blockquote>
+<p>上面我们说的如果你已经push到线上代码库, reset 删除指定commit以后,你git push可能导致一大堆冲突.但是revert<br>并不会.</p>
+</blockquote>
+<p>第二:</p>
+<blockquote>
+<p>如果在日后现有分支和历史分支需要合并的时候,reset 恢复部分的代码依然会出现在历史分支里.但是revert 方向提交的commit<br>并不会出现在历史分支里.</p>
+</blockquote>
+<p>第三:</p>
+<blockquote>
+<p>reset 是在正常的commit历史中,删除了指定的commit,这时 HEAD 是向后移动了,而 revert<br>是在正常的commit历史中再commit一次,只不过是反向提交,他的 HEAD 是一直向前的.</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> Git </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Vue全选功能]]></title>
       <url>/2017/05/09/Vue%E5%85%A8%E9%80%89%E5%8A%9F%E8%83%BD/</url>
       <content type="html"><![CDATA[<p>HTML代码</p>
@@ -248,22 +300,6 @@ tags:
     </entry>
     
     <entry>
-      <title><![CDATA[Hexo博客添加Fork me on GitHub]]></title>
-      <url>/2017/04/28/forme/</url>
-      <content type="html"><![CDATA[<p>1 . 去网址<a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="external">https://github.com/blog/273-github-ribbons</a> 挑选自己喜欢的样式，并复制代码。<br>2 . 修改主题文件。以我用的next主题为例,粘贴刚才复制的代码到 themes/next/layout/_layout.swig文件中，修改后的的文件内容如下 <img src="http://op28wafvd.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170429150201.png" alt="此处输入图片的描述"></p>
-<p>3 . 再把其中的链接地址改为你的github地址。如上图修改红框中地址。</p>
-]]></content>
-      
-        <categories>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[JavaScript事件初识]]></title>
       <url>/2017/04/28/JavaScript%E4%BA%8B%E4%BB%B6%E5%88%9D%E8%AF%86/</url>
       <content type="html"><![CDATA[<blockquote>
@@ -380,6 +416,22 @@ for (var i = 0; i &lt; aLi.length; i++) {
         <categories>
             
             <category> JS </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo博客添加Fork me on GitHub]]></title>
+      <url>/2017/04/28/forme/</url>
+      <content type="html"><![CDATA[<p>1 . 去网址<a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="external">https://github.com/blog/273-github-ribbons</a> 挑选自己喜欢的样式，并复制代码。<br>2 . 修改主题文件。以我用的next主题为例,粘贴刚才复制的代码到 themes/next/layout/_layout.swig文件中，修改后的的文件内容如下 <img src="http://op28wafvd.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170429150201.png" alt="此处输入图片的描述"></p>
+<p>3 . 再把其中的链接地址改为你的github地址。如上图修改红框中地址。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
             
         </categories>
         
