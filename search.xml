@@ -3,6 +3,167 @@
   
     
     <entry>
+      <title><![CDATA[float属性以及三列布局]]></title>
+      <url>/2017/06/30/css%E5%B8%83%E5%B1%80/</url>
+      <content type="html"><![CDATA[<p>##设置float属性，父元素高度会变成0解决方案<br>（float会使元素脱离文档流。）</p>
+<p>###1、在浮动元素下面加一个清除浮动的元素:div{clear:both}</p>
+<p>html</p>
+<pre><code>&lt;div class=&quot;clearfix&quot;&gt;
+    &lt;div style=&quot;float: left;&quot;&gt;Div 1&lt;/div&gt;
+   &lt;div style=&quot;float: left;&quot;&gt;Div 2&lt;/div&gt;
+&lt;/div
+</code></pre><p>css</p>
+<pre><code>.clearfix:after { 
+   content: &quot; &quot;;
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+</code></pre><p>###2、将父元素也设置浮动<br>html</p>
+<pre><code>&lt;div style=&quot;float: left;&quot;&gt;
+    &lt;div style=&quot;float: left;&quot;&gt;Div 1&lt;/div&gt;
+   &lt;div style=&quot;float: left;&quot;&gt;Div 2&lt;/div&gt;
+&lt;/div
+</code></pre><p>###3、为父元素加入overflow:hidded属性或者overflow:auto属性<br>html</p>
+<pre><code>&lt;div style=&quot;overflow: hidden;&quot;&gt;
+    &lt;div style=&quot;float: left;&quot;&gt;Div 1&lt;/div&gt;
+   &lt;div style=&quot;float: left;&quot;&gt;Div 2&lt;/div&gt;
+&lt;/div
+</code></pre><p><strong>float在什么情况下失效</strong></p>
+<p>1、两个同级div，第一个设置float:left,第二个未设置，则会第一个脱离了文档流，也就是说第二个div无视第一个的存在，将与之发生重叠</p>
+<p>2、absolute存在的时候float会失效</p>
+<p>##三列布局</p>
+<p>###1、双飞翼布局<br>html</p>
+<pre><code>&lt;div class=&quot;mydiv&quot;&gt;
+    &lt;div id=&quot;middle&quot;&gt;
+        &lt;div id=&quot;middle-wrap&quot;&gt;&lt;span&gt;div-middle&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;left&quot;&gt;&lt;span&gt;left&lt;/span&gt;&lt;/div&gt;
+    &lt;div id=&quot;right&quot;&gt;&lt;span&gt;right&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>style</p>
+<pre><code>#middle {
+    float: left;
+    background-color: #fff9ca;
+    width: 100%;
+    height: 50px;
+}
+#left {
+    float: left;
+    background-color: red;
+    width: 150px;
+    margin-left: -100%;
+    height: 50px;
+}
+#right {
+    float: left;
+    background-color: yellow;
+    width: 200px;
+    margin-left: -200px;
+    height: 50px;
+}
+#middle-wrap {
+    margin: 0 200px 0 150px;
+}
+</code></pre><p><a href="http://runjs.cn/code/fkwzley6" target="_blank" rel="external">效果预览</a></p>
+<p>###2、绝对定位布局<br>html</p>
+<pre><code>&lt;div class=&quot;mydiv&quot;&gt;
+    &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;middle&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>style</p>
+<pre><code>.mydiv{
+    background-color: #eee;
+    margin:20px;padding: 20px;
+    border: solid 1px #999;
+    position: relative;
+}
+.left {
+    width: 160px;height: 100px;padding: 20px;
+    background: blue;
+    position: absolute;left: 20px;
+}
+.right{
+    width: 80px;height: 260px;padding: 20px;
+    background: blue;
+    position: absolute;right: 20px;
+}
+.middle{
+    background: red;
+    height: 200px;padding: 20px;
+    margin-left: 220px;margin-right: 140px;
+}
+[效果预览][2]
+</code></pre><p>###2、浮动布局<br>html</p>
+<pre><code>&lt;div class=&quot;mydiv&quot;&gt;
+    &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;middle&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>style</p>
+<pre><code>.mydiv{
+    background-color: #eee;
+    margin:20px;padding: 20px;
+    border: solid 1px #999;
+    overflow: auto;
+}
+.left {
+    float: left;
+    width: 160px;height: 100px;padding: 20px;
+    background: blue;
+}
+.right{
+    float: right;
+    width: 80px;height: 300px;padding: 20px;
+    background: blue;
+}    
+.middle{
+    margin-left: 220px;margin-right: 150px;
+    height: 200px;padding: 20px;
+    background: red;
+}
+[效果预览][3]
+</code></pre><p>###4、 flex布局<br>html</p>
+<pre><code>&lt;div class=&quot;flex&quot;&gt;
+    &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;middle&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>style</p>
+<pre><code>.flex {
+    display: flex;
+    flex-flow: row;
+}
+.left {
+    background-color: red;
+    width: 150px;
+    height: 50px;
+}
+.middle {
+    background-color: #fff9ca;
+    flex:1;
+    height: 50px;
+}
+.right {
+    background-color: yellow;
+    width: 200px;
+    height: 50px;
+}
+（在 flex 布局中不能将被定位的元素宽度或高度设定为 100%，这样会影响其他定值大小的元素。可设置为flex: 1;）
+</code></pre><p><a href="http://runjs.cn/code/tat91vwa" target="_blank" rel="external">效果预览</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Css </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[GIT的常用命令]]></title>
       <url>/2017/05/22/GIT%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
       <content type="html"><![CDATA[<h2 id="git-reset-revert-回退回滚取消提交返回上一版本"><a href="#git-reset-revert-回退回滚取消提交返回上一版本" class="headerlink" title="git reset revert 回退回滚取消提交返回上一版本"></a>git reset revert 回退回滚取消提交返回上一版本</h2><p><strong>没有push</strong></p>
