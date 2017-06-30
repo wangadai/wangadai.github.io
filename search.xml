@@ -6,8 +6,7 @@
       <title><![CDATA[float属性以及三列布局]]></title>
       <url>/2017/06/30/css%E5%B8%83%E5%B1%80/</url>
       <content type="html"><![CDATA[<p>##设置float属性，父元素高度会变成0解决方案<br>（float会使元素脱离文档流。）</p>
-<p>###1、在浮动元素下面加一个清除浮动的元素:div{clear:both}</p>
-<p>html</p>
+<h3 id="1、在浮动元素下面加一个清除浮动的元素-div-clear-both"><a href="#1、在浮动元素下面加一个清除浮动的元素-div-clear-both" class="headerlink" title="1、在浮动元素下面加一个清除浮动的元素:div{clear:both}"></a>1、在浮动元素下面加一个清除浮动的元素:div{clear:both}</h3><p>html</p>
 <pre><code>&lt;div class=&quot;clearfix&quot;&gt;
     &lt;div style=&quot;float: left;&quot;&gt;Div 1&lt;/div&gt;
    &lt;div style=&quot;float: left;&quot;&gt;Div 2&lt;/div&gt;
@@ -19,12 +18,12 @@
    height: 0; 
    clear: both;
 }
-</code></pre><p>###2、将父元素也设置浮动<br>html</p>
+</code></pre><h3 id="2、将父元素也设置浮动"><a href="#2、将父元素也设置浮动" class="headerlink" title="2、将父元素也设置浮动"></a>2、将父元素也设置浮动</h3><p>html</p>
 <pre><code>&lt;div style=&quot;float: left;&quot;&gt;
     &lt;div style=&quot;float: left;&quot;&gt;Div 1&lt;/div&gt;
    &lt;div style=&quot;float: left;&quot;&gt;Div 2&lt;/div&gt;
 &lt;/div
-</code></pre><p>###3、为父元素加入overflow:hidded属性或者overflow:auto属性<br>html</p>
+</code></pre><h3 id="3、为父元素加入overflow-hidded属性或者overflow-auto属性"><a href="#3、为父元素加入overflow-hidded属性或者overflow-auto属性" class="headerlink" title="3、为父元素加入overflow:hidded属性或者overflow:auto属性"></a>3、为父元素加入overflow:hidded属性或者overflow:auto属性</h3><p>html</p>
 <pre><code>&lt;div style=&quot;overflow: hidden;&quot;&gt;
     &lt;div style=&quot;float: left;&quot;&gt;Div 1&lt;/div&gt;
    &lt;div style=&quot;float: left;&quot;&gt;Div 2&lt;/div&gt;
@@ -33,7 +32,7 @@
 <p>1、两个同级div，第一个设置float:left,第二个未设置，则会第一个脱离了文档流，也就是说第二个div无视第一个的存在，将与之发生重叠</p>
 <p>2、absolute存在的时候float会失效</p>
 <p>##三列布局</p>
-<p>###1、双飞翼布局<br>html</p>
+<h3 id="1、双飞翼布局"><a href="#1、双飞翼布局" class="headerlink" title="1、双飞翼布局"></a>1、双飞翼布局</h3><p>html</p>
 <pre><code>&lt;div class=&quot;mydiv&quot;&gt;
     &lt;div id=&quot;middle&quot;&gt;
         &lt;div id=&quot;middle-wrap&quot;&gt;&lt;span&gt;div-middle&lt;/span&gt;&lt;/div&gt;
@@ -66,7 +65,7 @@
     margin: 0 200px 0 150px;
 }
 </code></pre><p><a href="http://runjs.cn/code/fkwzley6" target="_blank" rel="external">效果预览</a></p>
-<p>###2、绝对定位布局<br>html</p>
+<h3 id="2、绝对定位布局"><a href="#2、绝对定位布局" class="headerlink" title="2、绝对定位布局"></a>2、绝对定位布局</h3><p>html</p>
 <pre><code>&lt;div class=&quot;mydiv&quot;&gt;
     &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
@@ -95,7 +94,7 @@
     margin-left: 220px;margin-right: 140px;
 }
 [效果预览][2]
-</code></pre><p>###2、浮动布局<br>html</p>
+</code></pre><h3 id="2、浮动布局"><a href="#2、浮动布局" class="headerlink" title="2、浮动布局"></a>2、浮动布局</h3><p>html</p>
 <pre><code>&lt;div class=&quot;mydiv&quot;&gt;
     &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
@@ -124,7 +123,7 @@
     background: red;
 }
 [效果预览][3]
-</code></pre><p>###4、 flex布局<br>html</p>
+</code></pre><h3 id="4、-flex布局"><a href="#4、-flex布局" class="headerlink" title="4、 flex布局"></a>4、 flex布局</h3><p>html</p>
 <pre><code>&lt;div class=&quot;flex&quot;&gt;
     &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;middle&quot;&gt;&lt;/div&gt;
