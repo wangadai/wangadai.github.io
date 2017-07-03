@@ -399,7 +399,7 @@ for(var i=0;i&lt;arr.length,i++){}
 </code></pre><p>myproject目录就是你的站点根目录</p>
 <h2 id="本地调试-运行hexo"><a href="#本地调试-运行hexo" class="headerlink" title="本地调试-运行hexo"></a>本地调试-运行hexo</h2><pre><code>$ cd myproject
 
-$ npm install
+$ cnpm install
 
 $ hexo s -g  
 </code></pre><p>可以在  <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>  查看<br>停止运行 按住Ctrl+C键即可停止<br><img src="http://op28wafvd.bkt.clouddn.com/hexo1.png" alt="此处输入图片的描述"></p>
